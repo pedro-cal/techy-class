@@ -1,0 +1,543 @@
+﻿{
+    "2020-5th-List": [
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "1",
+            "FullName": "Arthur Holanda Pompa Carvalhaes",
+            "FirstName": "Arthur",
+            "LastName": " Holanda Pompa Carvalhaes",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "2",
+            "FullName": "Beatriz Arouca Ribeiro Bastos",
+            "FirstName": "Beatriz",
+            "LastName": " Arouca Ribeiro Bastos",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "3",
+            "FullName": "Beatriz Mendes Magalhães",
+            "FirstName": "Beatriz",
+            "LastName": " Mendes Magalhães",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "4",
+            "FullName": "Bernardo Prado de Moraes",
+            "FirstName": "Bernardo",
+            "LastName": " Prado de Moraes",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "5",
+            "FullName": "Carol Vilela de Souza",
+            "FirstName": "Carol",
+            "LastName": " Vilela de Souza",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "6",
+            "FullName": "Felipe Henriques Silva Batista",
+            "FirstName": "Felipe",
+            "LastName": " Henriques Silva Batista",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "7",
+            "FullName": "Guilherme Costa Ferreira",
+            "FirstName": "Guilherme",
+            "LastName": " Costa Ferreira",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "8",
+            "FullName": "Guilherme Pereira Hirtz Guerra",
+            "FirstName": "Guilherme",
+            "LastName": " Pereira Hirtz Guerra",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "9",
+            "FullName": "Igor Ramos Vianna",
+            "FirstName": "Igor",
+            "LastName": " Ramos Vianna",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "10",
+            "FullName": "Isabela de Souza Gonçalves",
+            "FirstName": "Isabela",
+            "LastName": " de Souza Gonçalves",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "11",
+            "FullName": "Julia Gonçalves Mação",
+            "FirstName": "Julia",
+            "LastName": " Gonçalves Mação",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "12",
+            "FullName": "Letícia Fentanes Sussekind Rocha",
+            "FirstName": "Letícia",
+            "LastName": " Fentanes Sussekind Rocha",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "13",
+            "FullName": "Lorenzo Amaral Siciliano",
+            "FirstName": "Lorenzo",
+            "LastName": " Amaral Siciliano",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "14",
+            "FullName": "Lucas Junqueira Marques dos Santos",
+            "FirstName": "Lucas",
+            "LastName": " Junqueira Marques dos Santos",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "15",
+            "FullName": "Luís Felipe Muchelli Lima de Almeida",
+            "FirstName": "Luís",
+            "LastName": " Felipe Muchelli Lima de Almeida",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "16",
+            "FullName": "Luíza Baia da Rocha",
+            "FirstName": "Luíza",
+            "LastName": " Baia da Rocha",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "17",
+            "FullName": "Luiza Teixeira Corrêa",
+            "FirstName": "Luiza",
+            "LastName": " Teixeira Corrêa"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "18",
+            "FullName": "Luize Bernadino Amora",
+            "FirstName": "Luize",
+            "LastName": " Bernadino Amora",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "19",
+            "FullName": "Marcelo Adriano Fortes Mendes",
+            "FirstName": "Marcelo",
+            "LastName": " Adriano Fortes Mendes",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "20",
+            "FullName": "Maria Clara Baptista Arruzzo",
+            "FirstName": "Maria",
+            "LastName": " Clara Baptista Arruzzo",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "21",
+            "FullName": "Maria Fernanda Callegari de Loyola",
+            "FirstName": "Maria",
+            "LastName": " Fernanda Callegari de Loyola",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "22",
+            "FullName": "Marina Miranda Moram",
+            "FirstName": "Marina",
+            "LastName": " Miranda Moram",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "23",
+            "FullName": "Miguel Braga Soares Araes Salgado",
+            "FirstName": "Miguel",
+            "LastName": " Braga Soares Araes Salgado",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "24",
+            "FullName": "Pedro Eduardo Crespo Ribeiro",
+            "FirstName": "Pedro",
+            "LastName": " Eduardo Crespo Ribeiro",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "25",
+            "FullName": "Pedro Machado Almeida",
+            "FirstName": "Pedro",
+            "LastName": " Machado Almeida",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "26",
+            "FullName": "Rafaela Rodrigues Rangel",
+            "FirstName": "Rafaela",
+            "LastName": " Rodrigues Rangel",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "27",
+            "FullName": "Sophia de Souza Quintanilha Véras",
+            "FirstName": "Sophia",
+            "LastName": " de Souza Quintanilha Véras",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "28",
+            "FullName": "Sophia França Maricato",
+            "FirstName": "Sophia",
+            "LastName": " França Maricato",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "29",
+            "FullName": "Valentina Cordeiro Cardozo",
+            "FirstName": "Valentina",
+            "LastName": " Cordeiro Cardozo",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "501",
+            "Number": "30",
+            "FullName": "Yumi Nakamura Perrota",
+            "FirstName": "Yumi",
+            "LastName": " Nakamura Perrota",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "1",
+            "FullName": "Ana Júlia Santiago de Carvalho",
+            "FirstName": "Ana Júlia",
+            "LastName": " Santiago de Carvalho",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "2",
+            "FullName": "Beatriz Caricio Pereira",
+            "FirstName": "Beatriz",
+            "LastName": " Caricio Pereira",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "3",
+            "FullName": "Carlos Alexandre Carvalhal Pinheiro",
+            "FirstName": "Carlos Alexandre",
+            "LastName": " Carvalhal Pinheiro",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "4",
+            "FullName": "Daniela Fernandes Lucas Tomaz",
+            "FirstName": "Daniela",
+            "LastName": " Fernandes Lucas Tomaz",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "5",
+            "FullName": "Eduarda de Oliveira Silva",
+            "FirstName": "Eduarda",
+            "LastName": " de Oliveira Silva",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "6",
+            "FullName": "Felipe Nogueira Tristão",
+            "FirstName": "Felipe",
+            "LastName": " Nogueira Tristão",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "7",
+            "FullName": "Gabriel Fonseca Valadão Gandra",
+            "FirstName": "Gabriel",
+            "LastName": " Fonseca Valadão Gandra",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "8",
+            "FullName": "Gabriela Stock Oliveira Hoffmann",
+            "FirstName": "Gabriela",
+            "LastName": " Stock Oliveira Hoffmann",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "9",
+            "FullName": "George Matheus Teixeira do Espírito Santo Pereira de Souza",
+            "FirstName": "George",
+            "LastName": " Matheus Teixeira do Espírito Santo Pereira de Souza",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "10",
+            "FullName": "Giovanna Barroso Sobral",
+            "FirstName": "Giovanna",
+            "LastName": " Barroso Sobral",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "11",
+            "FullName": "Giovanna Lopes Oliveira Silva da Costa",
+            "FirstName": "Giovanna",
+            "LastName": " Lopes Oliveira Silva da Costa",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "12",
+            "FullName": "Giovanna Maduro dos Santos de Queiroz Schaffél",
+            "FirstName": "Giovanna",
+            "LastName": " Maduro dos Santos de Queiroz Schaffél",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "13",
+            "FullName": "Guilherme Ferreira de Sousa Teixeira Xavier",
+            "FirstName": "Guilherme",
+            "LastName": " Ferreira de Sousa Teixeira Xavier",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "14",
+            "FullName": "Guilherme Rosa Louzada",
+            "FirstName": "Guilherme",
+            "LastName": " Rosa Louzada",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "15",
+            "FullName": "Guilherme Salme de Figueiredo",
+            "FirstName": "Guilherme",
+            "LastName": " Salme de Figueiredo",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "16",
+            "FullName": "Gustavo Blanco Barboza",
+            "FirstName": "Gustavo",
+            "LastName": " Blanco Barboza",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "17",
+            "FullName": "Gustavo Martins Epelman",
+            "FirstName": "Gustavo",
+            "LastName": " Martins Epelman",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "18",
+            "FullName": "Heitor Duarte Cabral",
+            "FirstName": "Heitor",
+            "LastName": " Duarte Cabral",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "19",
+            "FullName": "Júlia Xavier Biancardi",
+            "FirstName": "Júlia",
+            "LastName": " Xavier Biancardi",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "20",
+            "FullName": "Maria Clara Amaral Bazoli Rodrigues",
+            "FirstName": "Maria Clara",
+            "LastName": " Amaral Bazoli Rodrigues",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "21",
+            "FullName": "Maria Fernanda Menezes Pôças",
+            "FirstName": "Maria Fernanda",
+            "LastName": " Menezes Pôças",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "22",
+            "FullName": "Miguel Rodrigues Mendonça",
+            "FirstName": "Miguel",
+            "LastName": " Rodrigues Mendonça",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "23",
+            "FullName": "Mirella Santos Cruz",
+            "FirstName": "Mirella",
+            "LastName": " Santos Cruz",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "24",
+            "FullName": "Novak Nicolai Salgado Godlesky",
+            "FirstName": "Novak",
+            "LastName": " Nicolai Salgado Godlesky",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "25",
+            "FullName": "Pedro Bilate de Carvalho Gomes",
+            "FirstName": "Pedro",
+            "LastName": " Bilate de Carvalho Gomes",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "26",
+            "FullName": "Rafaela Mendes Magalhães",
+            "FirstName": "Rafaela",
+            "LastName": " Mendes Magalhães",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "27",
+            "FullName": "Rafaella Abreu Barreto Amaral Jorge",
+            "FirstName": "Rafaella",
+            "LastName": " Abreu Barreto Amaral Jorge",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "28",
+            "FullName": "Sthefany de Souza Quintanilha Véras",
+            "FirstName": "Sthefany",
+            "LastName": " de Souza Quintanilha Véras",
+            "Group": "A"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "29",
+            "FullName": "Thalita Falcão Melim Pinto",
+            "FirstName": "Thalita",
+            "LastName": " Falcão Melim Pinto",
+            "Group": "B"
+        },
+        {
+            "Year": "2020",
+            "Class": "502",
+            "Number": "30",
+            "FullName": "Vinícius Mendes Magalhães",
+            "FirstName": "Vinícius",
+            "LastName": " Mendes Magalhães",
+            "Group": "A"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tags-input-box {
+    background-color: rgb(235, 235, 235);
+    padding: 0px 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    font-size: 12px;
+}
+
+.tags-box {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.tag {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: 3px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    display: flex;
+    
+    white-space: nowrap;
+}
+
+.tag-label {
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+.tag-delete {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.tags-input {
+    padding: 1px 5px;
+    font-size: 12px;
+}
