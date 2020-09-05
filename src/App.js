@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import {Route, Switch} from 'react-router-dom';
+
+//*IMPORTING COMPONENTS AND CSS 
 import ClassList from './components/class-list/class-list';
 import StudentsList from './components/students-list/students-list';
-import emcData2 from './sample-data/emcData2';
+import Header from './components/header/header';
+import SignIn from './components/sign-in/sign-in';
 import './App.css';
 
-//IMPORTING ICONS
-import {FaGraduationCap as ClassesIcon} from 'react-icons/fa';
-import {FaUserAlt as StudentsIcon} from 'react-icons/fa';
-import {FaUsers as GroupsIcon} from 'react-icons/fa';
+//*IMPORTING JSON DATA 
+import emcData2 from './sample-data/emcData2';
 
-//STORING STUDENTS DATA INTO AN ARRAY ADDING IDs
+//*STORING STUDENTS DATA INTO AN ARRAY ADDING IDs 
 var key = 0;
 const studentsList = emcData2.map(student => {
   student.id = key;
@@ -18,6 +20,7 @@ const studentsList = emcData2.map(student => {
   return student;
 });
 
+//*READING AND STORING THE AMOUNT OF CLASSES IN STUDENTS DATA INTO classes 
 var classes = [];
 function loadClasses(){
     emcData2.map(student => {
@@ -29,7 +32,7 @@ function loadClasses(){
 }
 loadClasses();
 
-//DEFINING APP CLASS
+//* DEFINING APP CLASS 
 class App extends Component {
   constructor(){
     super();
@@ -37,60 +40,32 @@ class App extends Component {
     this.state = {
       students: studentsList,
       classes: classes,
-      showStudents: true,
-      showClasses: false,
-      showGroups: false
+      currentUser: null      
     };    
   }
 
-  /* handleStudentsClick() {
-    return (() => this.setState(state => {state.showStudents = !state.showStudents},
-        console.log(this.state.showStudents)))        
-  } */
-
   render() {
+    var state = this.state;
     return (
       <div className="App">
-        <div className="header">
-            <div className="main-menu">
-                <div className="menu-box" 
-                    onClick={() => 
-                    this.setState(state => ({
-                        showStudents: false,
-                        showClasses: true,
-                        showGroups: false}))
-                    }>
-                    <div className="icon-box"><ClassesIcon /></div>
-                    <span className="menu-item">Classes</span>
-                </div>
-                
-                <div className="menu-box" 
-                    onClick={() => 
-                    this.setState(state => ({
-                        showStudents: true,
-                        showClasses: false,
-                        showGroups: false}))                        
-                    }>
-                <div className="icon-box"><StudentsIcon /></div>
-                    <span className="menu-item">Students</span>
-                </div>
-                <div className="menu-box">
-                <div className="icon-box"><GroupsIcon /></div>
-                    <span className="menu-item">Groups</span>
-                </div>                
-            </div>
+        <Header currentUser={this.state.currentUser}/>
+        <div className = "main-container">
+          <Switch>
+            <Route 
+              exact path="/"
+              render={(props) => (
+                <ClassList {...state}/>
+              )}
+            />
+            <Route path="/students" 
+              render={(props) => (
+                <StudentsList {...state}/>
+              )}
+            />
+            <Route path="/sign-in" component={SignIn} />
+          </Switch>            
         </div>        
-        <div className = "main-container">             
-            {this.state.showClasses ? <ClassList classes={this.state.classes} 
-            students={this.state.students}/> : null}
-            
-            {this.state.showStudents ? 
-            <StudentsList students={this.state.students}
-                showFilter={true}
-                chosenClass={""}/> : null}
-        </div>        
-      </div>
-      
+      </div>      
     )
   }
 }
