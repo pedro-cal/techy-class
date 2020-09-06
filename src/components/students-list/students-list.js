@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import TagsInput from '../tags-input/tags-input';
-/* import emcData2 from '../../sample-data/JSONDownloadTest.json'; */
 import './students-list-style.css';
 
 class StudentsList extends Component {
@@ -9,7 +8,7 @@ class StudentsList extends Component {
     const emcDataFromJson = require('../../sample-data/JSONDownloadTest.json');
     this.state = {
       students: emcDataFromJson,
-      showFilter: this.props.showFilter,
+      showSearchField: this.props.showSearchField,
       searchField: "",
       chosenClass: this.props.chosenClass      
     }    
@@ -20,6 +19,7 @@ class StudentsList extends Component {
       console.log("Student 0 in StudentsList: " + this.state.students[0].Labels));
   }
   
+  //* Temporary function that allows me to download changes as a JSON file 
   handleDownload = () => {
     const jsonData = this.state.students;
     const fileData = JSON.stringify(jsonData, null, 3);
@@ -33,6 +33,13 @@ class StudentsList extends Component {
   
   render(){
     const students = this.state.students;
+
+    //* Render console tests 
+    console.log("Students from file on render: ");
+    console.log(students);
+    console.log("Students from props: ");
+    console.log(this.props.students);
+
     let filteredStudents = [];
     if (this.props.chosenClass !== "") {
       filteredStudents = students.filter(student => 
@@ -44,27 +51,26 @@ class StudentsList extends Component {
     
     return(
       <div className="students-list">
-        {/* INPUT BOX TO FILTER STUDENTS BY CLASS */}
-        { this.state.showFilter ?
-          <div className="class-filter-box">
-            <label htmlFor="class-filter" className="basic-label">
-              Filtre os alunos pelo número da turma:
-            </label> <br/>
-            <input type="search" id="class-filter"
-            placeholder="Digite o número da turma"
-            onChange={e => {
-              this.setState({searchField: e.currentTarget.value}, 
-                () => console.log(this.state.searchField));
-            }}/>
-          </div> : null
-        }
-          <button type="button" 
-          id="download-json"
-          onClick={this.handleDownload}
-          >Download JSON</button>
+        {/* INPUT BOX TO FILTER STUDENTS */}        
+        <div className="class-filter-box">
+          <label htmlFor="class-filter" className="basic-label">
+            Filtre os alunos pelo número da turma:
+          </label> <br/>
+          <input type="search" id="class-filter"
+          placeholder="Digite o número da turma"
+          onChange={e => {
+            this.setState({searchField: e.currentTarget.value}, 
+              () => console.log(this.state.searchField));
+          }}/>
+        </div>
+      
+        <button type="button" 
+        id="download-json"
+        onClick={this.handleDownload}>Download JSON</button>
 
         {/* LIST OF STUDENTS CARDS */}
         <div className = "card-list">
+          {console.log(filteredStudents)}
           {filteredStudents.map(student => (                     
             <div key={student.id} className = "card-box">
               <div className="card-row-main">

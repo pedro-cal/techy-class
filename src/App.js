@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
+import {auth} from './firebase/firebase.utils';
+import './App.css';
 
-//*IMPORTING COMPONENTS AND CSS 
+//*IMPORTING COMPONENTS 
 import ClassList from './components/class-list/class-list';
 import StudentsList from './components/students-list/students-list';
 import Header from './components/header/header';
 import SignIn from './components/sign-in/sign-in';
-import './App.css';
 
 //*IMPORTING JSON DATA 
 import emcData2 from './sample-data/emcData2';
@@ -44,27 +45,40 @@ class App extends Component {
     };    
   }
 
+  toggleAuthMonitor = null;
+
+  componentDidMount() {
+    this.toggleAuthMonitor = auth.onAuthStateChanged(user => {
+      this.setState({currentUser: user});
+    });
+  }
+
+  componentWillUnmount() {
+    this.toggleAuthMonitor();
+  }
+
   render() {
     var state = this.state;
     return (
       <div className="App">
-        <Header currentUser={this.state.currentUser}/>
+        <Header currentUser={this.state.currentUser}/>                  
         <div className = "main-container">
-          <Switch>
-            <Route 
-              exact path="/"
-              render={(props) => (
-                <ClassList {...state}/>
-              )}
-            />
-            <Route path="/students" 
-              render={(props) => (
-                <StudentsList {...state}/>
-              )}
-            />
-            <Route path="/sign-in" component={SignIn} />
-          </Switch>            
-        </div>        
+          { state.currentUser ? 
+            <Switch>
+              <Route 
+                exact path="/classes"
+                render={(props) => (
+                  <ClassList {...state}/>
+                )}
+              />
+              <Route path="/students" 
+                render={(props) => (
+                  <StudentsList {...state} chosenClass={""}/>
+                )}
+              />            
+            </Switch> : <SignIn />
+          }                      
+        </div>         
       </div>      
     )
   }
