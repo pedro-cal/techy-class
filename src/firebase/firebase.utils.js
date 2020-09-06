@@ -14,6 +14,32 @@ const config = {
 
 firebase.initializeApp(config);
 
+export const getUserRefFromDB = async (signedUser, additionalData) => {
+  //The line below was in the course but seems redundant with App.js - AuthMonitor
+  /* if (!signedUser) return; */
+  //* get signedUser ref and snapshot 
+  const userRef = firestore.doc(`users/${signedUser.uid}`);
+  const userSnapshot = await userRef.get();
+
+  //* if signedUser is new, send its data to DB 
+  if(!userSnapshot.exists) {
+    const {displayName, email} = signedUser;
+    const createdAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      })
+    } catch (error) {
+      console.log("Problem sending User to DB", error.message)
+    }
+  }
+  return userRef;
+}
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 

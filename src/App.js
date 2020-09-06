@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {auth} from './firebase/firebase.utils';
+import {auth, getUserRefFromDB} from './firebase/firebase.utils';
 import './App.css';
 
 //*IMPORTING COMPONENTS 
@@ -48,8 +48,28 @@ class App extends Component {
   toggleAuthMonitor = null;
 
   componentDidMount() {
-    this.toggleAuthMonitor = auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user});
+    //* listen to Auth changes 
+    this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {
+      console.log("Auth current user changed to: ");
+      console.log(signedUser);
+
+      if (signedUser) {        
+        //* 1) send signed user to DB (if it's not there) and get its ref 
+        const userRef = await getUserRefFromDB(signedUser);
+
+        //* 2) setState at currentUser as DB data on signedUser 
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          }, ()=>console.log(this.state.currentUser))
+        })
+                
+      } else {
+        this.setState({currentUser: signedUser});
+      }
     });
   }
 
