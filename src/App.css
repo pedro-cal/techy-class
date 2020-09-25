@@ -15,3 +15,8 @@ html{
   /* justify-content: center; */
   align-items: center;  
 }
+
+.push-to-db,
+.push-to-db button {
+  padding: 10px;
+}

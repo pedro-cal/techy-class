@@ -4,6 +4,7 @@ import {auth, getUserRefFromDB} from './firebase/firebase.utils';
 import './App.css';
 
 //*IMPORTING COMPONENTS 
+import Home from './pages/home/home';
 import ClassList from './components/class-list/class-list';
 import StudentsList from './components/students-list/students-list';
 import Header from './components/header/header';
@@ -49,6 +50,7 @@ class App extends Component {
   toggleAuthMonitor = null;
 
   componentDidMount() {
+
     //* listen to Auth changes 
     this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {
       console.log("Auth current user changed to: ");
@@ -65,7 +67,7 @@ class App extends Component {
               id: snapshot.id,
               ...snapshot.data()
             }
-          }, ()=>console.log(this.state.currentUser))
+          })
         })
                 
       } else {
@@ -78,6 +80,20 @@ class App extends Component {
     this.toggleAuthMonitor();
   }
 
+  /* pushToDB = () => {
+    let stds = this.state.students;
+    
+    try {
+      stds.forEach(std => {
+        firestore.doc(`students/${std.id}`).set({
+          ...std
+        })
+      })      
+    } catch (error) {
+      console.error(error);
+    }
+  } */
+
   render() {
     var state = this.state;
     return (
@@ -87,8 +103,12 @@ class App extends Component {
           :null
         }                          
         <div className = "main-container">
+          {/* <div className="push-to-db" onClick={this.pushToDB}>
+            <button type='button'>Push Students to DB</button>
+          </div> */}
           { state.currentUser ? 
             <Switch>
+              <Route path="/" component={Home}/>
               <Route 
                 exact path="/classes"
                 render={(props) => (
@@ -104,8 +124,7 @@ class App extends Component {
                 render={(props) => (
                   <ProjectsList {...state}/>
                 )}
-              />
-              <Route path="/log-in" component={LogIn}/>        
+              />                      
             </Switch> : <LogIn />
           }                      
         </div>         
