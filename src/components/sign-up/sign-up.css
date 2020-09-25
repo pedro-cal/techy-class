@@ -1,0 +1,125 @@
+.sign-in-container,
+.sign-up-container {  
+    position: relative;  
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+}
+
+.sign-form-box {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sign-subtitle {
+    color: gray;
+    margin-bottom: 20px;    
+}
+
+.error-message {
+    color: red;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    padding: 5px 10px;    
+    border: 1px solid red;
+    border-radius: 5px;
+    width: fit-content;
+    align-self: center;
+}
+
+.sign-in-form,
+.sign-up-form {
+    
+    display: flex;
+    flex-direction: column;
+    width: 300px;        
+}
+
+.input-container {
+    position: relative;
+}
+
+.sign-in-input {    
+    margin: 10px 0;
+    background-color: transparent;
+    height: 1.2rem;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: none;
+    border-bottom: 1.5px solid rgb(80, 80, 80);    
+    outline: none;
+    color: white;
+}
+
+.input-label {
+    pointer-events: none;
+    position: absolute;
+    top: 10px;
+    left: 70px;
+    color: grey;
+    transition: 300ms ease all;
+}
+
+.sign-in-input::placeholder {
+    color: transparent;
+}
+.sign-in-input:focus + .input-label,
+.sign-in-input:not(:placeholder-shown) + .input-label {
+    font-size: 0.65rem;
+    top: 0px;
+}
+
+.sign-in-btn {
+    width: 80%;
+    align-self: center;
+    margin-top: 15px;
+    height: 2.5rem;
+    background-color: lightgray;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+}
+.sign-in-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    transform: scale(1.03);
+}
+.sign-in-btn:active {
+    transform: scale(1);
+}
+
+#google-sign-in-btn {
+    align-self: center;
+    max-width: 200px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+#google-sign-in-btn:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+#google-sign-in-btn:active {
+    transform: scale(1.0);    
+}
+
+.sub-btn-text {
+    align-self: center;
+    width: fit-content;
+    font-size: 0.85rem;
+    color: gray;
+}
+.sign-up-link {
+    align-self: center;
+    width: fit-content;
+    font-size: 0.85rem;
+    color: white;
+}

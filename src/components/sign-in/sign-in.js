@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './sign-in.css';
 
-import {signInWithGoogle} from '../../firebase/firebase.utils';
+import {auth, signInWithGoogle} from '../../firebase/firebase.utils';
 
 class SignIn extends React.Component {
     constructor() {
@@ -10,29 +9,57 @@ class SignIn extends React.Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',            
         }
+    }
+
+    handleChange = (e) => {
+        const {name,value} = e.target;
+        this.setState({[name]: value})
+    }
+
+    handleSubmit = async (e) => {
+        e.preventDefault();
+        const {email,password} = this.state;
+
+        await auth.signInWithEmailAndPassword(email,password);
     }
 
     render() {
         return(
-            <div className="sign-in-container">
-                <div className="sign-in-form-box">
-                    <form className="sign-in-form" >
-                        <input type="email" className="sign-in-input"
-                        placeholder='your e-mail'/>
-                        <input type="password" className="sign-in-input"
-                        placeholder='your password'/>
+            <div className="sign-in-container">                    
+                <div className="sign-form-box">
+                    <h2 className="sign-subtitle">I have an account</h2>
+                    <form className="sign-in-form" onSubmit={this.handleSubmit} >
+                        <div className="input-container">                                
+                            <input 
+                                type="email" 
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                className="sign-in-input"
+                                placeholder="bla"
+                            />
+                            <label className="input-label" htmlFor="email">your email</label>
+                        </div>
+                        <div className="input-container">
+                            <input 
+                            type="password" 
+                            name="password" 
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            className="sign-in-input"
+                            placeholder="bla"/>
+                            <label className="input-label" htmlFor="password">your password</label>
+                        </div>
                         <button className="sign-in-btn">Sign In</button>
                         <img alt="Sign In Wigh Google" 
                         src='./images/google-sign-in/btn_google_signin_dark_normal_web@2x.png' 
                         id="google-sign-in-btn"
                         onClick={signInWithGoogle}/>
                     </form>
-                    <p className="sub-btn-text">Don't have an account?</p>
-                    <Link className="sign-up-link" to="/sign-up">Sign up here.</Link>
                 </div>
-            </div>            
+            </div>
         )
     }
 }

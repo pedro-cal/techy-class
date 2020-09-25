@@ -7,21 +7,33 @@
 .main-menu {
   background-color: rgb(45, 45, 45);
   position: relative;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   min-height: 5vh;
   padding: 14px 0px;
   border-radius: 0px;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 6px #000);
+  filter: drop-shadow(0 0 6px #000);  
+}
+
+.menu-logo {
+  align-self: center;
+  font-family: 'Russo One', sans-serif;
+  font-size: 2rem;
+}
+
+.menu-container {
+  height: fit-content;
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
   justify-content: center;
 }
 
-.sign-in-menu{
-  position: absolute;
-  justify-self: right;
-  margin-right: 30px;  
+.sign-in-menu{  
+  height: fit-content;
+  justify-self: right;  
   border: 1px solid rgb(45, 45, 45); 
   border-radius: 7px;
 }

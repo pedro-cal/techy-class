@@ -1,0 +1,11 @@
+.sign-in-up-container {
+    display: flex;
+}
+
+.logo {
+    color: white;
+    padding: 30px;
+    margin: 10px 0;
+    font-family: 'Russo One', sans-serif;
+    font-size: 2.5rem;
+}

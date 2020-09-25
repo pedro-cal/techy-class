@@ -5,7 +5,6 @@ import './header.css';
 //* IMPORTING ICONS 
 import {FaGraduationCap as ClassesIcon} from 'react-icons/fa';
 import {FaUserAlt as StudentsIcon} from 'react-icons/fa';
-import {FaUsers as GroupsIcon} from 'react-icons/fa';
 import {FaSignOutAlt as SignOutIcon} from 'react-icons/fa' ;
 import { auth } from '../../firebase/firebase.utils';
 
@@ -27,20 +26,23 @@ class Header extends React.Component {
         }
         
         return(
-            <div className="header">
+            <div className="header">                
                 <div className="main-menu">
-                    <Link className="menu-box" to="/classes">
-                        <div className="icon-box"><ClassesIcon /></div>
-                        <span className="menu-item">Classes</span>
-                    </Link>                    
-                    <Link className="menu-box" to="/students">
-                        <div className="icon-box"><StudentsIcon /></div>
-                        <span className="menu-item">Students</span>
-                    </Link>
-                    <Link className="menu-box" to="/groups">
-                        <div className="icon-box"><GroupsIcon /></div>
-                        <span className="menu-item">Groups</span>
-                    </Link>                
+                    <div className="menu-logo">Techy Class</div>
+                    <div className="menu-container">
+                        <Link className="menu-box" to="/classes">
+                            <div className="icon-box"><ClassesIcon /></div>
+                            <span className="menu-item">Classes</span>
+                        </Link>                    
+                        <Link className="menu-box" to="/students">
+                            <div className="icon-box"><StudentsIcon /></div>
+                            <span className="menu-item">Students</span>
+                        </Link>
+                       {/*  <Link className="menu-box" to="/projects">
+                            <div className="icon-box"><ProjectsIcon /></div>
+                            <span className="menu-item">Projects</span>
+                        </Link> */}
+                    </div>                                    
                     <div className="sign-in-menu">
                     {this.props.currentUser ?                         
                         <div className="user-menu-box">

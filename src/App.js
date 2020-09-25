@@ -7,7 +7,8 @@ import './App.css';
 import ClassList from './components/class-list/class-list';
 import StudentsList from './components/students-list/students-list';
 import Header from './components/header/header';
-import SignIn from './components/sign-in/sign-in';
+import ProjectsList from './components/projects-list/projects-list';
+import LogIn from './pages/login/login';
 
 //*IMPORTING JSON DATA 
 import emcData2 from './sample-data/emcData2';
@@ -81,7 +82,10 @@ class App extends Component {
     var state = this.state;
     return (
       <div className="App">
-        <Header currentUser={this.state.currentUser}/>                  
+        {state.currentUser !== null?
+          <Header currentUser={this.state.currentUser}/>
+          :null
+        }                          
         <div className = "main-container">
           { state.currentUser ? 
             <Switch>
@@ -95,8 +99,14 @@ class App extends Component {
                 render={(props) => (
                   <StudentsList {...state} chosenClass={""}/>
                 )}
-              />            
-            </Switch> : <SignIn />
+              />
+              <Route path="/projects" 
+                render={(props) => (
+                  <ProjectsList {...state}/>
+                )}
+              />
+              <Route path="/log-in" component={LogIn}/>        
+            </Switch> : <LogIn />
           }                      
         </div>         
       </div>      
