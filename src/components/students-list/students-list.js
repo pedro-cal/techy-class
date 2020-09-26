@@ -5,9 +5,9 @@ import './students-list-style.css';
 class StudentsList extends Component {
   constructor(props){
     super(props);
-    const emcDataFromJson = require('../../sample-data/JSONDownloadTest.json');
+        
     this.state = {
-      students: emcDataFromJson,
+      students: this.props.students,
       showSearchField: this.props.showSearchField,
       searchField: "",
       chosenClass: this.props.chosenClass      
@@ -15,11 +15,24 @@ class StudentsList extends Component {
   }
 
   getUpdatedStudents = (updatedStudents) => {
-    this.setState({students: updatedStudents},
-      console.log("Student 0 in StudentsList: " + this.state.students[0].Labels));
+    this.setState({students: updatedStudents});
   }
+
+  /* pushToDB = () => {
+    let stds = this.state.students;
+    
+    try {
+      stds.forEach(std => {
+        firestore.doc(`students/${std.id}`).set({
+          ...std
+        })
+      })      
+    } catch (error) {
+      console.error(error);
+    }
+  }  */
   
-  //* Temporary function that allows me to download changes as a JSON file 
+  /* //* Temporary function that allows me to download changes to Students array as a JSON file 
   handleDownload = () => {
     const jsonData = this.state.students;
     const fileData = JSON.stringify(jsonData, null, 3);
@@ -29,16 +42,11 @@ class StudentsList extends Component {
     link.download = 'JSONDownloadTest.json';
     link.href = url;
     link.click();
-  }
+  } */
   
   render(){
     const students = this.state.students;
-
-    //* Render console tests 
-    console.log("Students from file on render: ");
-    console.log(students);
-    console.log("Students from props: ");
-    console.log(this.props.students);
+    students.sort((a,b) => a.id - b.id);    
 
     let filteredStudents = [];
     if (this.props.chosenClass !== "") {
@@ -56,21 +64,26 @@ class StudentsList extends Component {
           <label htmlFor="class-filter" className="basic-label">
             Filtre os alunos pelo número da turma:
           </label> <br/>
-          <input type="search" id="class-filter"
-          placeholder="Digite o número da turma"
-          onChange={e => {
-            this.setState({searchField: e.currentTarget.value}, 
-              () => console.log(this.state.searchField));
-          }}/>
+          <input 
+            type="search" 
+            id="class-filter"
+            placeholder="Digite o número da turma"
+            onChange={e => {
+              this.setState({searchField: e.currentTarget.value});
+            }}
+          />
         </div>
+
+       {/*  <div className="push-to-db" onClick={this.pushToDB}>
+            <button type='button'>Push Students to DB</button>
+          </div> */}
       
-        <button type="button" 
+       {/*  <button type="button" 
         id="download-json"
-        onClick={this.handleDownload}>Download JSON</button>
+        onClick={this.handleDownload}>Download JSON</button> */}
 
         {/* LIST OF STUDENTS CARDS */}
-        <div className = "card-list">
-          {console.log(filteredStudents)}
+        <div className = "cards-list">          
           {filteredStudents.map(student => (                     
             <div key={student.id} className = "card-box">
               <div className="card-row-main">

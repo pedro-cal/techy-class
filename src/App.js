@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {auth, getUserRefFromDB} from './firebase/firebase.utils';
+import {auth, firestore, getUserRefFromDB} from './firebase/firebase.utils';
 import './App.css';
 
 //*IMPORTING COMPONENTS 
@@ -11,7 +11,7 @@ import Header from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
 import LogIn from './pages/login/login';
 
-//*IMPORTING JSON DATA 
+/* //*IMPORTING JSON DATA 
 import emcData2 from './sample-data/emcData2';
 
 //*STORING STUDENTS DATA INTO AN ARRAY ADDING IDs 
@@ -21,9 +21,9 @@ const studentsList = emcData2.map(student => {
   key++;
   student.Labels = [];  
   return student;
-});
+}); */
 
-//*READING AND STORING THE AMOUNT OF CLASSES IN STUDENTS DATA INTO classes 
+/* //*READING AND STORING THE AMOUNT OF CLASSES IN STUDENTS DATA INTO classes 
 var classes = [];
 function loadClasses(){
     emcData2.map(student => {
@@ -33,7 +33,7 @@ function loadClasses(){
         return classes;
     })
 }
-loadClasses();
+loadClasses(); */
 
 //* DEFINING APP CLASS 
 class App extends Component {
@@ -41,8 +41,8 @@ class App extends Component {
     super();
 
     this.state = {
-      students: studentsList,
-      classes: classes,
+      students: [],
+      classes: [],
       currentUser: null      
     };    
   }
@@ -50,6 +50,17 @@ class App extends Component {
   toggleAuthMonitor = null;
 
   componentDidMount() {
+
+    //* GETTING STUDENTS COLLECTION FROM FIRESTORE 
+    firestore.collection('students')
+      .get()
+      .then(stdsSnapshot => {
+        const dbStudents = [];
+        stdsSnapshot.forEach(doc => {
+          dbStudents.push(doc.data());          
+        })
+        this.setState({students: dbStudents})
+      });
 
     //* listen to Auth changes 
     this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {
@@ -108,7 +119,7 @@ class App extends Component {
           </div> */}
           { state.currentUser ? 
             <Switch>
-              <Route path="/" component={Home}/>
+              <Route path="/" exact component={Home}/>
               <Route 
                 exact path="/classes"
                 render={(props) => (
