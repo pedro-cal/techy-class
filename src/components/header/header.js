@@ -6,6 +6,7 @@ import './header.css';
 import {FaGraduationCap as ClassesIcon} from 'react-icons/fa';
 import {FaUserAlt as StudentsIcon} from 'react-icons/fa';
 import {FaSignOutAlt as SignOutIcon} from 'react-icons/fa' ;
+import {FaHome as HomeIcon} from 'react-icons/fa' ;
 import { auth } from '../../firebase/firebase.utils';
 
 class Header extends React.Component {
@@ -30,6 +31,10 @@ class Header extends React.Component {
                 <div className="main-menu">
                     <div className="menu-logo">Techy Class</div>
                     <div className="menu-container">
+                        <Link className="menu-box" to="/">
+                            <div className="icon-box"><HomeIcon /></div>
+                            <span className="menu-item">Home</span>
+                        </Link>                    
                         <Link className="menu-box" to="/classes">
                             <div className="icon-box"><ClassesIcon /></div>
                             <span className="menu-item">Classes</span>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {firestore} from '../../firebase/firebase.utils';
 import {MdCancel as DeleteIcon} from 'react-icons/md';
 import "./tags-input-style.css";
 
@@ -13,20 +14,26 @@ class TagsInput extends Component {
             studentId: this.props.currentStudent.id,
         }
     }
+    
+    componentDidMount() {
+        let {studentId} = this.state;
+        let studentRef = firestore.doc(`students/${studentId}`);
+        studentRef.onSnapshot(doc => {
+            let std = doc.data();
+            this.setState({tagsArray: std.Labels});
+        })
+    }
 
     handleInputChange = (e) => {
         this.setState({tagsInputValue: e.currentTarget.value});
-    }
+   }
 
-    resetInput = () => {
-        this.setState({tagsInputValue: ""});
-    }
-
+/* 
     sendUpdatedStudents = () => {
         this.props.updateStudents(this.state.students);
-    }
+    } */
 
-    addTag = (e) => {
+  /*   addTag = (e) => {
         let students = this.state.students;
         let currentStdId = this.state.studentId;
         let currentTags = this.state.tagsArray;
@@ -42,27 +49,32 @@ class TagsInput extends Component {
                 this.sendUpdatedStudents();                
             });
         this.tagsInput.value = null;
+    } */
+
+    pushTagToDB = (e) => {
+        let {studentId, tagsInputValue, tagsArray} = this.state;
+        let studentRef = firestore.doc(`students/${studentId}`);
+        studentRef.update({
+            Labels: [...tagsArray ,tagsInputValue]
+        })
+        .then()
+        .catch(error => console.error(error));
     }
 
     handleKeyPress = (e) => {
         if (e.key === "Enter" && e.target.value !== "") {
-            this.addTag();
+            this.pushTagToDB();
+            this.tagsInput.value = null;
         }
     }
 
     removeTag = (i) => {
-        let students = this.state.students;
+        let {studentId} = this.state;
         let newTags = [...this.state.tagsArray];
         newTags.splice(i,1);
-        this.setState({tagsArray: newTags},
-            () => {
-                students.map(std => {
-                    if(std.id === this.state.studentId){
-                        std.Labels = this.state.tagsArray;
-                    } return students
-                });
-                this.sendUpdatedStudents();
-            });        
+
+        let studentRef = firestore.doc(`students/${studentId}`);        
+        studentRef.update({Labels: newTags});         
     }
 
     render(){
