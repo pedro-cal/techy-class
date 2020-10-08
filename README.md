@@ -1,4 +1,4 @@
-# Project Name
+# Techy Class - Class Management Tool
 > An ongoing ReactJS project aiming to create a simple, yet useful, class-management web tool for teachers. Its main goal is to enable teachers to manage classes and students, create simple course plans and use student-driven live class tools to improve interactivity during classes.
 
 ## Table of contents
