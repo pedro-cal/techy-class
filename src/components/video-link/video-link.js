@@ -2,6 +2,7 @@ import React from 'react';
 import './video-link.css';
 import {firestore} from '../../firebase/firebase.utils';
 
+import {youtubeKey} from '../../config';
 import GetYoutubeId from 'get-youtube-id';
 import {FaCheck as SaveIcon} from 'react-icons/fa';
 import {FaSearch as SearchIcon} from 'react-icons/fa';
@@ -50,14 +51,10 @@ constructor(props) {
     this.toggleVideoListener();
   }
 
-  getVideo = () => {
-    const key = 'AIzaSyCKKT39Cj300mdznNcTRtDnNwPW3fimUR8';    
-    /* const URL = 'https://youtu.be/9sWEecNUW-o';
-    const idPosition = URL.indexOf('.be/') + 4;
-    const videoID = URL.slice(idPosition); */
+  getVideo = () => {    
     const videoID = GetYoutubeId(this.state.videoURL);    
 
-    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoID}&key=${key}`)
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoID}&key=${youtubeKey}`)
       .then(resp => resp.json())
       .then((resp) => {
         this.setState({video: resp.items[0], showPreview: true});        
