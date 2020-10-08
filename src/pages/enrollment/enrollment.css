@@ -1,0 +1,70 @@
+.enrollment-box {
+    margin-top: 50px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 7px 7px 15px black;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.input-container {
+    position: relative;
+}
+
+.enrollment-input {    
+    margin: 10px 0;
+    width: 80%;
+    background-color: transparent;
+    height: 3rem;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1.5px solid rgb(80, 80, 80);    
+    outline: none;
+    color: white;
+}
+
+.enrollment-label {
+    font-size: 1.5rem;
+    pointer-events: none;
+    position: absolute;
+    top: 28px;
+    left: 105px;
+    color: grey;
+    transition: 300ms ease all;
+}
+
+.enrollment-input::placeholder {
+    color: transparent;
+}
+.enrollment-input:focus + .enrollment-label,
+.enrollment-input:not(:placeholder-shown) + .enrollment-label {
+    font-size: 0.8rem;
+    top: 0px;
+}
+
+.submit-btn {
+    width: fit-content;
+    padding: 0 15px;
+    align-self: center;
+    margin-top: 10px;
+    height: 2.5rem;
+    background-color: lightgray;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2rem;    
+    outline: none;
+}
+.submit-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    transform: scale(1.03);
+}
+.submit-btn:active {
+    transform: scale(1);
+}

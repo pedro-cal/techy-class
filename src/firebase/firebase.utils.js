@@ -25,12 +25,14 @@ export const getUserRefFromDB = async (signedUser, additionalData) => {
   if(!userSnapshot.exists) {
     const {displayName, email} = signedUser;
     const createdAt = new Date();
+    const userRole = '';
 
     try {
       await userRef.set({
         displayName,
         email,
         createdAt,
+        userRole,
         ...additionalData
       })
     } catch (error) {

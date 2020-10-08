@@ -10,6 +10,7 @@ import StudentsList from './components/students-list/students-list';
 import Header from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
 import LogIn from './pages/login/login';
+import Enrollment from './pages/enrollment/enrollment';
 
 /* //*IMPORTING JSON DATA 
 import emcData2 from './sample-data/emcData2';
@@ -43,14 +44,16 @@ class App extends Component {
     this.state = {
       students: [],
       classes: [],
-      currentUser: null      
+      currentUser: null,
+      userRole: null,
+      showEnrollment: false    
     };    
   }
 
   toggleAuthMonitor = null;
 
   componentDidMount() {
-
+        
     //* GETTING STUDENTS COLLECTION FROM FIRESTORE 
     firestore.collection('students')
       .get()
@@ -63,9 +66,7 @@ class App extends Component {
       });
 
     //* listen to Auth changes 
-    this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {
-      console.log("Auth current user changed to: ");
-      console.log(signedUser);
+    this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {      
 
       if (signedUser) {        
         //* 1) send signed user to DB (if it's not there) and get its ref 
@@ -78,8 +79,8 @@ class App extends Component {
               id: snapshot.id,
               ...snapshot.data()
             }
-          })
-        })
+          }, () => {this.setState({userRole: this.state.currentUser.userRole})})
+        });
                 
       } else {
         this.setState({currentUser: signedUser});
@@ -89,37 +90,29 @@ class App extends Component {
 
   componentWillUnmount() {
     this.toggleAuthMonitor();
-  }
-
-  /* pushToDB = () => {
-    let stds = this.state.students;
-    
-    try {
-      stds.forEach(std => {
-        firestore.doc(`students/${std.id}`).set({
-          ...std
-        })
-      })      
-    } catch (error) {
-      console.error(error);
-    }
-  } */
+  } 
 
   render() {
-    var state = this.state;
+    var state = this.state;   
     return (
       <div className="App">
-        {state.currentUser !== null?
-          <Header currentUser={this.state.currentUser}/>
+        {state.currentUser !== null ?
+          <Header currentUser={state.currentUser}/>
           :null
         }                          
         <div className = "main-container">
-          {/* <div className="push-to-db" onClick={this.pushToDB}>
-            <button type='button'>Push Students to DB</button>
-          </div> */}
-          { state.currentUser ? 
+          { state.currentUser === null ? <LogIn /> : null}
+          { state.userRole === '' && state.userRole !== null ? 
+            <Enrollment currentUser={state.currentUser}/> : null
+          }
+          { state.userRole !== '' && state.userRole !== null ? 
             <Switch>
-              <Route path="/" exact component={Home}/>
+              <Route 
+                path="/" exact
+                render={(props) => (
+                  <Home {...state} />
+                )}
+              />
               <Route 
                 exact path="/classes"
                 render={(props) => (
@@ -136,7 +129,7 @@ class App extends Component {
                   <ProjectsList {...state}/>
                 )}
               />                      
-            </Switch> : <LogIn />
+            </Switch> : null 
           }                      
         </div>         
       </div>      

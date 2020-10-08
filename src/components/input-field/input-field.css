@@ -1,0 +1,60 @@
+
+.input-container {
+    border: 1px solid green;
+    position: relative;
+    width: fit-content;
+}
+
+.sign-in-input {    
+    margin: 10px 0;
+    background-color: transparent;
+    height: 1.2rem;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: none;
+    border-bottom: 1.5px solid rgb(80, 80, 80);    
+    outline: none;
+    color: white;
+}
+
+.input-label {
+    width: 100%;
+    border: 1px solid pink;
+    pointer-events: none;
+    /* position: absolute;
+    top: 10px;
+    left: 70px; */
+    color: grey;
+    transition: 300ms ease all;
+}
+
+.sign-in-input::placeholder {
+    color: transparent;
+}
+.sign-in-input:focus + .input-label,
+.sign-in-input:not(:placeholder-shown) + .input-label {
+    font-size: 0.65rem;
+    top: 0px;
+}
+
+.sign-in-btn {
+    width: 80%;
+    align-self: center;
+    margin-top: 15px;
+    height: 2.5rem;
+    background-color: lightgray;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+}
+.sign-in-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    transform: scale(1.03);
+}
+.sign-in-btn:active {
+    transform: scale(1);
+}
