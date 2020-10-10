@@ -84,6 +84,7 @@
 }
 
 .sign-out-box{
+  margin-top: 7px;
   font-size: small;
   text-decoration: underline;
   border: 1px solid rgb(45, 45, 45); 
@@ -101,4 +102,18 @@
 
 #sign-out-text {
   margin-right: 8px;
+}
+
+.credits {
+  color: yellow;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-style: normal;
+  font-size: 0.85rem;
+}
+.credits span {
+  font-size: 0.9rem;
+  margin-left: 2px;
 }

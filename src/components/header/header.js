@@ -7,6 +7,8 @@ import {FaGraduationCap as ClassesIcon} from 'react-icons/fa';
 import {FaUserAlt as StudentsIcon} from 'react-icons/fa';
 import {FaSignOutAlt as SignOutIcon} from 'react-icons/fa' ;
 import {FaHome as HomeIcon} from 'react-icons/fa' ;
+import {FaCoins as DollarIcon} from 'react-icons/fa';
+import {FaInfinity as InfiniteIcon} from 'react-icons/fa';
 import { auth } from '../../firebase/firebase.utils';
 
 class Header extends React.Component {
@@ -51,7 +53,15 @@ class Header extends React.Component {
                     <div className="sign-in-menu">
                     {this.props.currentUser ?                         
                         <div className="user-menu-box">
-                            <span>{`Hello, ${userName}`}</span>
+                            <span>
+                                {`Hello, ${userName}`}
+                                {this.props.currentUser.userRole === 'student' ? 
+                                <span className="credits">
+                                    <DollarIcon/>                                    
+                                    <span>{this.props.currentUser.credits}</span>
+                                </span>                      
+                                :null} 
+                            </span>
                             <div className="sign-out-box" onClick={() => auth.signOut()}>
                                 <span id="sign-out-text">Sign Out</span>
                                 <SignOutIcon/>
