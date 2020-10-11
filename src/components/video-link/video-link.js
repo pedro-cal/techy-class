@@ -1,6 +1,7 @@
 import React from 'react';
 import './video-link.css';
 import {firestore} from '../../firebase/firebase.utils';
+import {creditsOperation} from '../../firebase/databaseMethods';
 
 import {youtubeKey} from '../../config';
 import GetYoutubeId from 'get-youtube-id';
@@ -24,7 +25,8 @@ constructor(props) {
       video: null,
       videoSaved: false,
       showPreview: false,
-      videoList: null
+      videoList: null,
+      videoPosters: []
     }    
   }
 
@@ -33,22 +35,40 @@ constructor(props) {
   //* GET ALL VIDEOS POSTED ON FIREBASE 
   getVideosFromDB = () => {
     var videoList = [];
+    //* Get stored videos from DB 
     firestore.collection('videos').get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          videoList.push(doc.data());
+          //* pushing videos from DB into array variable 
+          videoList.push(doc.data());          
         })
-      })
-      .then(()=>{
+      })      
+      .then(()=>{        
         this.setState({videoList: videoList},
-          ()=>console.log(this.state.videoList));
+          () => this.addUserNameToVideos());
       })
       .catch(error => console.error(error)); 
   }
+
+  //* ADD USER NAMES TO VIDEO LIST 
+  addUserNameToVideos = () => {
+    let dbVideos = this.state.videoList;    
+    dbVideos.forEach(video => {
+      firestore.collection('users').doc(video.userID).get()
+            .then(doc => {
+              video.postedBy = doc.data().displayName;
+            })
+            .then(() => {
+              this.setState({videoList: dbVideos});
+            })
+    });
+  }  
   
   //* MONITOR FIREBASE VIDEOS COLLECTION 
   componentDidMount() {
     this.getVideosFromDB();
+
+    //* Toggle monitor on Firestore video collection 
     this.toggleVideoListener = firestore.collection('videos')
           .onSnapshot(() => this.getVideosFromDB());
   }
@@ -116,6 +136,7 @@ constructor(props) {
     .then(() => {
       //* Take 1 credit off of the user 
       /* creditsOperation(this.props.currentUser.id, 'remove', 1); */
+      creditsOperation(this.props.currentUser.id,'remove',1);
 
       //* Inform success, then reset state 
       this.setState({videoSaved: true});
@@ -126,6 +147,23 @@ constructor(props) {
     });
   }  
 
+  getUserByID = (userID) => {
+    console.log('getUserByID activated');
+    var userData;    
+    firestore.collection('users').doc(userID).get()
+        .then(doc => {
+            if (doc.exists) {                
+                userData = doc.data();
+              }
+        })
+        .then(() => {
+          this.setState({videoPosters:[
+            { userID: userID,
+              userName: userData.displayName }
+          ]}, () => console.log(this.state.videoPosters))
+        })
+}
+
   handleClickLike = (e) => {
   }
 
@@ -135,7 +173,7 @@ constructor(props) {
   }
 
   render() {   
-    var {videoList} = this.state;
+    var {videoList} = this.state;    
     const currentUser = this.props.currentUser;
     
     return(
@@ -143,7 +181,7 @@ constructor(props) {
         <h1>Video Ranks</h1>
 
         {/* //* VIDEO URL INPUT FIELD */}
-        <div className="field-wrapper">                                
+        <div className="input-box">                                
           <input type="search" 
           name="videoURL" 
           value={this.state.videoURL}
@@ -189,7 +227,8 @@ constructor(props) {
         {/* //* LIST DB VIDEOS */}
         {this.state.videoList !== null ? 
           <div className="video-card-box">
-            {videoList.map((video, index) => (
+            {videoList.map((video, i) => {              
+              return (
               <div className="video-card" key={video.videoURL}>                
                 <a href={video.videoURL} target="_blank" rel="noopener noreferrer">
                   <img src={video.videoData.snippet.thumbnails.medium.url} 
@@ -212,9 +251,8 @@ constructor(props) {
                     <span className="video-stats">
                       23
                     </span>
-                    <span className="video-label">
-                      {currentUser.displayName}
-                      
+                    <span className="video-label">                      
+                      {video.postedBy}               
                     </span>
                     <span className="video-icon">
                       {video.userID === currentUser.id ? 
@@ -223,7 +261,7 @@ constructor(props) {
                   </div>                  
                 </div>
               </div>
-            ))}
+            )})}
           </div> : null}
       </div>
     )

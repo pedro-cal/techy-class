@@ -16,6 +16,7 @@ class LogIn extends React.Component {
                 <div className="logo">Techy Class</div>
                 <div className="sign-in-up-container">
                     <SignIn />
+                    <hr className='form-divider'/>
                     <SignUp />
                 </div>                                                              
             </div>            

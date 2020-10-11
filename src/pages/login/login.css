@@ -1,5 +1,5 @@
 .login-container {
-    height: 70vh;    
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,4 +22,27 @@
     margin: 10px 0;
     font-family: 'Russo One', sans-serif;
     font-size: 2.5rem;
+
+    
+}
+
+@media(max-width: 767px) {
+    .logo {
+        font-size: 1.8rem;        
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 10px 0;
+        width: 100vw;                
+        background-color: rgb(45, 45, 45);
+        filter: drop-shadow(0 0 6px #000);
+    }
+    .sign-in-up-container{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .form-divider {
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }    
 }
