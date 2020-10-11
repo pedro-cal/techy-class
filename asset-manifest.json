@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pedro-cal/techy-class.git/static/css/main.6fc3bc25.chunk.css",
+    "main.js": "/pedro-cal/techy-class.git/static/js/main.ca055036.chunk.js",
+    "main.js.map": "/pedro-cal/techy-class.git/static/js/main.ca055036.chunk.js.map",
+    "runtime-main.js": "/pedro-cal/techy-class.git/static/js/runtime-main.84c5ee98.js",
+    "runtime-main.js.map": "/pedro-cal/techy-class.git/static/js/runtime-main.84c5ee98.js.map",
+    "static/js/2.609799c8.chunk.js": "/pedro-cal/techy-class.git/static/js/2.609799c8.chunk.js",
+    "static/js/2.609799c8.chunk.js.map": "/pedro-cal/techy-class.git/static/js/2.609799c8.chunk.js.map",
+    "index.html": "/pedro-cal/techy-class.git/index.html",
+    "precache-manifest.0fe3e533a5f85fc223898d16e0ce3fa6.js": "/pedro-cal/techy-class.git/precache-manifest.0fe3e533a5f85fc223898d16e0ce3fa6.js",
+    "service-worker.js": "/pedro-cal/techy-class.git/service-worker.js",
+    "static/css/main.6fc3bc25.chunk.css.map": "/pedro-cal/techy-class.git/static/css/main.6fc3bc25.chunk.css.map",
+    "static/js/2.609799c8.chunk.js.LICENSE.txt": "/pedro-cal/techy-class.git/static/js/2.609799c8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84c5ee98.js",
+    "static/js/2.609799c8.chunk.js",
+    "static/css/main.6fc3bc25.chunk.css",
+    "static/js/main.ca055036.chunk.js"
+  ]
+}
