@@ -20,6 +20,14 @@
   font-size: 2rem;
 }
 
+.nav-user-box {
+  width: 56%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .nav-box {
   height: fit-content;
   display: grid;
@@ -117,10 +125,12 @@
 
 
 @media(max-width:426px) {
+  /** HEADER SECTION */
   .header-box{
+    padding: 5px;
     display: flex;
     width: 100%;
-    justify-content: left;
+    /* justify-content: left; */
     /* padding: 10px; */
   }
   .header-logo{
@@ -128,11 +138,64 @@
     font-size: 1.2rem;
     margin-left: 10px;
   }
+  /** NAV + User details */
+  .nav-user-box{
+    display: flex;
+    flex-direction: column;
+  }
   .nav-box{
+    /* display: none; */
+    display: flex;
+    font-size: 0.8rem;
+    justify-self: flex-end;
+  }
+  .menu-box{
+    margin: 0px;    
+  }
+  .menu-item{
+    padding: 0 5px;
+  }
+  .icon-box {
     display: none;
   }
 
-  .sign-in-menu{
+  .user-menu-box{
+    margin-top: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #sign-out-text{
     display: none;
-  }    
+  }
+  .credits{
+    font-size: 0.6rem;
+    padding-top: 3px;
+  }
+  .credits span {
+    font-size: 0.75rem;
+  }
+  .sign-out-box{
+    margin: 0px;
+    margin-left: 5px;
+    font-size: 0.7rem;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-in-menu{
+    /* display: none; */
+    font-size: 0.7rem;
+  }
+
+  h1{
+    font-size: 1.8rem;
+  }
+ 
+  .input-box{
+    display: flex;
+    align-items: center;
+  }
+
 }

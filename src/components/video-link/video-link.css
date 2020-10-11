@@ -226,6 +226,10 @@ h1 {
     cursor: pointer;
 }
 
+.dislike-icon {
+    margin-left: 4px;
+}
+
 .video-text{    
     margin-bottom: 10px;
     display: flex;

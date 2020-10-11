@@ -36,45 +36,47 @@ class Header extends React.Component {
                     <div className="two"></div>
                     <div className="three"></div>
                 </div>
-                <nav className="nav-box">
-                    <Link className="menu-box" to="/">
-                        <div className="icon-box"><HomeIcon /></div>
-                        <span className="menu-item">Home</span>
-                    </Link>                    
-                    <Link className="menu-box" to="/classes">
-                        <div className="icon-box"><ClassesIcon /></div>
-                        <span className="menu-item">Classes</span>
-                    </Link>                    
-                    <Link className="menu-box" to="/students">
-                        <div className="icon-box"><StudentsIcon /></div>
-                        <span className="menu-item">Students</span>
-                    </Link>
-                    {/*  <Link className="menu-box" to="/projects">
-                        <div className="icon-box"><ProjectsIcon /></div>
-                        <span className="menu-item">Projects</span>
-                    </Link> */}
-                </nav>                                    
-                <div className="sign-in-menu">
-                {this.props.currentUser ?                         
-                    <div className="user-menu-box">
-                        <span>
-                            {`Hello, ${userName}`}
-                            {this.props.currentUser.userRole === 'student' ? 
-                            <span className="credits">
-                                <DollarIcon/>                                    
-                                <span>{this.props.currentUser.credits}</span>
-                            </span>                      
-                            :null} 
-                        </span>
-                        <div className="sign-out-box" onClick={() => auth.signOut()}>
-                            <span id="sign-out-text">Sign Out</span>
-                            <SignOutIcon/>
-                        </div>
-                    </div> : null
-                }
-                    {/* <div className="sign-in-box">
-                        <Link className="sign-in-link" to="/sign-in">Sign in</Link>
-                    </div>                         */}                    
+                <div className="nav-user-box">
+                    <nav className="nav-box">
+                        <Link className="menu-box" to="/">
+                            <div className="icon-box"><HomeIcon /></div>
+                            <span className="menu-item">Home</span>
+                        </Link>                    
+                        <Link className="menu-box" to="/classes">
+                            <div className="icon-box"><ClassesIcon /></div>
+                            <span className="menu-item">Classes</span>
+                        </Link>                    
+                        <Link className="menu-box" to="/students">
+                            <div className="icon-box"><StudentsIcon /></div>
+                            <span className="menu-item">Students</span>
+                        </Link>
+                        {/*  <Link className="menu-box" to="/projects">
+                            <div className="icon-box"><ProjectsIcon /></div>
+                            <span className="menu-item">Projects</span>
+                        </Link> */}
+                    </nav>
+                    <div className="sign-in-menu">
+                    {this.props.currentUser ?                         
+                        <div className="user-menu-box">
+                            <span>
+                                {userName}
+                                {this.props.currentUser.userRole === 'student' ? 
+                                <span className="credits">
+                                    <DollarIcon/>                                    
+                                    <span>{this.props.currentUser.credits}</span>
+                                </span>                      
+                                :null} 
+                            </span>
+                            <div className="sign-out-box" onClick={() => auth.signOut()}>
+                                <span id="sign-out-text">Sign Out</span>
+                                <SignOutIcon/>
+                            </div>
+                        </div> : null
+                    }
+                        {/* <div className="sign-in-box">
+                            <Link className="sign-in-link" to="/sign-in">Sign in</Link>
+                        </div>                         */}                    
+                    </div>
                 </div>
             </div>            
         )
