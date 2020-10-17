@@ -1,0 +1,58 @@
+.video-card {
+    margin: 0 7px;
+    margin-bottom: 12px;
+}
+
+.video-buttons{
+    color: lightgray;    
+    width: 95%;
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 5fr 1fr;
+    justify-items: center;
+}
+
+.video-stats {
+    width: 100%;
+    padding-left: 3px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+}
+
+.video-label{
+    color: gray;
+    width: 100%;
+    font-size: 0.7rem;
+    font-style: italic;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.video-icon{
+    width: fit-content;
+}
+.video-icon:hover{
+    cursor: pointer;
+}
+
+.toggled {
+    color: #3EA6FF;
+}
+
+.dislike-icon {
+    margin-left: 4px;
+}
+
+.video-text{    
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    color: white;
+    text-align: center;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import './video-link.css';
+import './video-rank.css';
+import VideoCard from '../video-card/video-card';
 import {firestore} from '../../firebase/firebase.utils';
 import {creditsOperation} from '../../firebase/databaseMethods';
 
@@ -7,12 +8,10 @@ import {youtubeKey} from '../../config';
 import GetYoutubeId from 'get-youtube-id';
 import {FaCheck as SaveIcon} from 'react-icons/fa';
 import {FaCoins as DollarIcon} from 'react-icons/fa';
-import {FaThumbsUp as LikeIcon} from 'react-icons/fa';
-import {FaThumbsDown as DislikeIcon} from 'react-icons/fa';
-import {FaTrash as TrashIcon} from 'react-icons/fa';
+
 
 //* CLASS COMPONENT DECLARATION 
-class VideoLink extends React.Component {
+class VideoRank extends React.Component {
 
 constructor(props) {
     super(props);
@@ -162,15 +161,7 @@ constructor(props) {
               userName: userData.displayName }
           ]}, () => console.log(this.state.videoPosters))
         })
-}
-
-  handleClickLike = (e) => {
-  }
-
-  handleClickDelete = (videoID) => {
-    firestore.collection('videos').doc(videoID).delete()
-      .catch(error => console.error(error));
-  }
+}  
 
   render() {   
     var {videoList} = this.state;    
@@ -227,45 +218,15 @@ constructor(props) {
         {/* //* LIST DB VIDEOS */}
         {this.state.videoList !== null ? 
           <div className="video-card-box">
-            {videoList.map((video, i) => {              
+            {videoList.map((video) => {
               return (
-              <div className="video-card" key={video.videoURL}>                
-                <a href={video.videoURL} target="_blank" rel="noopener noreferrer">
-                  <img src={video.videoData.snippet.thumbnails.medium.url} 
-                    alt=""
-                    className="video-thumb"
-                  />                  
-                </a>                
-                <div className="video-text">
-                  <span className="video-title">{video.videoData.snippet.title}</span>                  
-                  <div className="video-buttons">
-                    <span className="video-icon">
-                      <LikeIcon className="like-icon" onClick={this.handleClickLike}/>
-                    </span>
-                    <span className="video-stats">
-                      325
-                    </span>
-                    <span className="video-icon">
-                      <DislikeIcon className="dislike-icon" onClick={this.handleClickLike}/>
-                    </span>
-                    <span className="video-stats">
-                      23
-                    </span>
-                    <span className="video-label">                      
-                      {video.postedBy}               
-                    </span>
-                    <span className="video-icon">
-                      {video.userID === currentUser.id ? 
-                      <TrashIcon onClick={() => this.handleClickDelete(video.videoID)}/> : null }
-                    </span>
-                  </div>                  
-                </div>
-              </div>
-            )})}
+                <VideoCard video={video} currentUser={currentUser} key={video.videoID}/>
+              );
+            })}
           </div> : null}
       </div>
     )
   }
 }
 
-export default VideoLink;
+export default VideoRank;

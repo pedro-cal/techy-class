@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2930337cd26fffa880de840e66ac8a8d",
+    "revision": "ceb3e0fd17a7005867cde40396e5229c",
     "url": "/techy-class/index.html"
   },
   {
-    "revision": "abd9b27458846f360cc2",
-    "url": "/techy-class/static/css/main.6fc3bc25.chunk.css"
+    "revision": "a451ed84f7681cd05614",
+    "url": "/techy-class/static/css/main.52766ee3.chunk.css"
   },
   {
     "revision": "0911f8297a2f8a68b504",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/techy-class/static/js/2.76e857f2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "abd9b27458846f360cc2",
-    "url": "/techy-class/static/js/main.19963907.chunk.js"
+    "revision": "a451ed84f7681cd05614",
+    "url": "/techy-class/static/js/main.f56f0d0a.chunk.js"
   },
   {
     "revision": "9e1b7f4ab10b0473de70",

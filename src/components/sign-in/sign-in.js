@@ -29,7 +29,7 @@ class SignIn extends React.Component {
         return(
             <div className="sign-in-container">                    
                 <div className="sign-form-box">
-                    <h2 className="sign-subtitle">I have an account</h2>
+                    <h2 className="sign-subtitle">Sign In</h2>
                     <form className="sign-in-form" onSubmit={this.handleSubmit} >
                         <div className="input-container">                                
                             <input 

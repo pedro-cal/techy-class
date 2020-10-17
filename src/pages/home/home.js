@@ -1,12 +1,7 @@
 import React from 'react';
-import VideoLink from '../../components/video-link/video-link';
+import VideoRank from '../../components/video-link/video-rank';
 import './home.css';
 
-/* const Home = () => (
-    <div className="page-container">
-        Home Page
-    </div>
-) */
 
 class Home extends React.Component {
     constructor(props) {
@@ -20,7 +15,7 @@ class Home extends React.Component {
     render() {
         return(
             <div className="page-container">
-                <VideoLink currentUser={this.props.currentUser}/>
+                <VideoRank currentUser={this.props.currentUser}/>
             </div>
         )
     }

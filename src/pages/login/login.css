@@ -1,8 +1,9 @@
 .login-container {
-    height: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .sign-in-up-container {
@@ -21,9 +22,7 @@
     padding: 30px;
     margin: 10px 0;
     font-family: 'Russo One', sans-serif;
-    font-size: 2.5rem;
-
-    
+    font-size: 2.5rem;    
 }
 
 @media(max-width: 767px) {

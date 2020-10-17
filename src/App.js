@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import {auth, firestore, getUserRefFromDB} from './firebase/firebase.utils';
 import './App.css';
 
@@ -108,9 +108,21 @@ class App extends Component {
           { state.userRole !== '' && state.userRole !== null ? 
             <Switch>
               <Route 
-                path="/" exact
+                exact path={process.env.PUBLIC_URL}
+                render={() => (
+                  this.state.currentUser !== null ?
+                  <Redirect to="/home"/> :
+                  <Redirect to ="/login" />
+                )}
+              />
+              <Route 
+                exact path="/login"
+                component={LogIn}
+              />
+              <Route 
+                exact path="/home"
                 render={(props) => (
-                  <Home {...state} />
+                  <Home {...state}/>
                 )}
               />
               <Route 
@@ -119,7 +131,8 @@ class App extends Component {
                   <ClassList {...state}/>
                 )}
               />
-              <Route path="/students" 
+              <Route 
+                exact path="/students" 
                 render={(props) => (
                   <StudentsList {...state} chosenClass={""}/>
                 )}
@@ -129,7 +142,7 @@ class App extends Component {
                   <ProjectsList {...state}/>
                 )}
               />                      
-            </Switch> : null 
+            </Switch> : null
           }                      
         </div>         
       </div>      

@@ -14,17 +14,17 @@ h1 {
 
 .input-box {    
     width: 90%;
-    display: grid;
-    grid-template-columns: 8fr 1fr;
-    position: relative;      
+    min-height: 45px;
+    display: flex;    
+    position: relative;   
+    justify-content: center;   
+    align-items: center;
 }
 
-.animated-input {  
-    width: 100%;  
-    margin: 10px 0;
-    background-color: transparent;
-    height: 1.6rem;
-    padding-top: 8px;
+.animated-input {    
+    width: 100%;
+    max-width: 500px;
+    background-color: transparent;        
     text-align: center;
     font-size: 0.9rem;
     border: none;
@@ -37,8 +37,8 @@ h1 {
     width: 100%;    
     pointer-events: none;
     position: absolute;
-    top: 10px;
-    left: -5%;
+    top: 5px;
+    left: 0%;
     color: grey;
     transition: 300ms ease all;
 }
@@ -49,7 +49,7 @@ h1 {
 .animated-input:focus + .animated-label,
 .animated-input:not(:placeholder-shown) + .animated-label {
     font-size: 0.65rem;
-    top: 0px;
+    top: -5px;
 }
 
 .search-button {
@@ -74,6 +74,17 @@ h1 {
 }
 .search-button:active {
     transform: scale(1);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    padding: 5px 10px;    
+    border: 1px solid red;
+    border-radius: 5px;
+    width: fit-content;
+    align-self: center;
 }
 
 .success-message {
@@ -127,7 +138,8 @@ h1 {
 .video-title {
     /* width: 100%;    
     font-size: 0.85rem;
-    padding: 0px 5px; */ 
+    padding: 0px 5px; */     
+    min-height: 35px;
     width: auto;  
     margin-bottom: 3px;  
     margin-left: 10px;
@@ -182,59 +194,4 @@ h1 {
     width: 95%;    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.video-card {
-    margin: 0 7px;
-    margin-bottom: 12px;
-}
-
-.video-buttons{
-    color: lightgray;    
-    width: 95%;
-    margin-top: 2px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 5fr 1fr;
-    justify-items: center;
-}
-
-.video-stats {
-    width: 100%;
-    padding-left: 3px;
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-items: flex-start;
-}
-
-.video-label{
-    color: gray;
-    width: 100%;
-    font-size: 0.7rem;
-    font-style: italic;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 5px;
-}
-
-.video-icon{
-    width: fit-content;
-}
-.video-icon:hover{
-    cursor: pointer;
-}
-
-.dislike-icon {
-    margin-left: 4px;
-}
-
-.video-text{    
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    color: white;
-    text-align: center;
 }
