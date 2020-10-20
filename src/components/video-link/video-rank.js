@@ -10,7 +10,7 @@ import {FaCheck as SaveIcon} from 'react-icons/fa';
 import {FaCoins as DollarIcon} from 'react-icons/fa';
 
 
-//* CLASS COMPONENT DECLARATION 
+//* CLASS COMPONENT DECLARATION (should receive currentUser as props) 
 class VideoRank extends React.Component {
 
 constructor(props) {

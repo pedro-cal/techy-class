@@ -1,4 +1,5 @@
-.sign-up-container {  
+.sign-up-container {
+    width: 100%;    
     position: relative;  
     height: 100%;
     display: flex;
@@ -9,6 +10,7 @@
 }
 
 .sign-form-box {
+    width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -31,12 +33,11 @@
     align-self: center;
 }
 
-.sign-in-form,
-.sign-up-form {
-    
+.sign-up-form {    
     display: flex;
     flex-direction: column;
-    width: 300px;        
+    align-items: center;
+     
 }
 
 .input-container {
@@ -56,22 +57,13 @@
     color: white;
 }
 
-.input-label {
-    pointer-events: none;
-    position: absolute;
-    top: 10px;
-    left: 70px;
-    color: grey;
-    transition: 300ms ease all;
-}
-
 .sign-in-input::placeholder {
     color: transparent;
 }
 .sign-in-input:focus + .input-label,
 .sign-in-input:not(:placeholder-shown) + .input-label {
     font-size: 0.65rem;
-    top: 0px;
+    top: -5px;
 }
 
 .sign-in-btn {

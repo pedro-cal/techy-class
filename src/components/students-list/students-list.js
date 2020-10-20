@@ -45,8 +45,9 @@ class StudentsList extends Component {
   } */
   
   render(){
-    const students = this.state.students;
-    students.sort((a,b) => a.id - b.id);    
+    const students = this.props.students;
+    students.sort((a,b) => a.id - b.id);
+    console.log(students);
 
     let filteredStudents = [];
     if (this.props.chosenClass !== "") {
@@ -84,7 +85,7 @@ class StudentsList extends Component {
 
         {/* LIST OF STUDENTS CARDS */}
         <div className = "cards-list">          
-          {filteredStudents.map(student => (                     
+          {students.map(student => (                     
             <div key={student.id} className = "card-box">
               <div className="card-row-main">
                 <div className = "card-numbers">
@@ -93,7 +94,7 @@ class StudentsList extends Component {
                 </div>
                 <div >
                   <img className="card-images" 
-                  src={`/images/${student.Class}-${student.Number}.jpg`} 
+                  src={process.env.PUBLIC_URL + `/images/${student.Class}-${student.Number}.jpg`} 
                   alt=""/>
                 </div>
                 <div className = "card-names">

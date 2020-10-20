@@ -6,7 +6,7 @@ import './App.css';
 //*IMPORTING COMPONENTS 
 import Home from './pages/home/home';
 import ClassList from './components/class-list/class-list';
-import StudentsList from './components/students-list/students-list';
+import {StudentsPage} from './pages/students/students-page';
 import Header from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
 import LogIn from './pages/login/login';
@@ -96,54 +96,49 @@ class App extends Component {
     var state = this.state;   
     return (
       <div className="App">
-        {state.currentUser !== null ?
-          <Header currentUser={state.currentUser}/>
-          :null
-        }                          
-        <div className = "main-container">
-          { state.currentUser === null ? <LogIn /> : null}
+        {state.currentUser !== null ?        
+          <Header currentUser={state.currentUser}/> 
+          : null
+        }
+        {/* {state.currentUser === null ?
+          <Redirect to="/login" /> :
+          <Redirect to="/home" />
+        } */}          
+        <div className = "main-container">          
           { state.userRole === '' && state.userRole !== null ? 
             <Enrollment currentUser={state.currentUser}/> : null
           }
-          { state.userRole !== '' && state.userRole !== null ? 
-            <Switch>
-              <Route 
-                exact path={process.env.PUBLIC_URL}
-                render={() => (
-                  this.state.currentUser !== null ?
-                  <Redirect to="/home"/> :
-                  <Redirect to ="/login" />
-                )}
-              />
-              <Route 
-                exact path="/login"
-                component={LogIn}
-              />
-              <Route 
-                exact path="/home"
-                render={(props) => (
-                  <Home {...state}/>
-                )}
-              />
-              <Route 
-                exact path="/classes"
-                render={(props) => (
-                  <ClassList {...state}/>
-                )}
-              />
-              <Route 
-                exact path="/students" 
-                render={(props) => (
-                  <StudentsList {...state} chosenClass={""}/>
-                )}
-              />
-              <Route path="/projects" 
-                render={(props) => (
-                  <ProjectsList {...state}/>
-                )}
-              />                      
-            </Switch> : null
-          }                      
+          
+          <Switch>            
+            <Route 
+              exact path="/login"
+              component={LogIn}
+            />
+            <Route 
+              exact path="/home"
+              render={(props) => (
+                <Home {...state}/>
+              )}
+            />
+            <Route 
+              exact path="/classes"
+              render={(props) => (
+                <ClassList {...state}/>
+              )}
+            />
+            <Route 
+              exact path="/students" 
+              render={(props) => (
+                <StudentsPage {...state} chosenClass={""}/>
+              )}
+            />
+            <Route path="/projects" 
+              render={(props) => (
+                <ProjectsList {...state}/>
+              )}
+            />                      
+          </Switch>
+                                
         </div>         
       </div>      
     )

@@ -1,4 +1,5 @@
-.sign-in-container {  
+.sign-in-container {
+    width: 100%;    
     position: relative;  
     height: 100%;
     display: flex;
@@ -8,7 +9,8 @@
     border: none;
 }
 
-.sign-form-box {
+.sign-form-box {    
+    max-width: 510px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -22,19 +24,17 @@
 
 .sign-in-form{    
     display: flex;
-    flex-direction: column;
-    min-width: 30vw;
-    align-items: center;
+    flex-direction: column;    
+    align-items: center;    
 }
 
 .input-container {
-    width: fit-content;
+    width: 70%;
     position: relative;
     margin: 2%;
 }
 
-.sign-in-input {   
-    min-width: 20vw; 
+.sign-in-input {       
     margin: 10px 0;
     background-color: transparent;
     height: 1.4rem;
@@ -49,21 +49,13 @@
 }
 
 .input-label {
+    width: 100%;
     pointer-events: none;
     position: absolute;    
-    top: 7%;
-    left: 5%;
+    top: 10%;
+    left: 0%;
     color: grey;
     transition: 300ms ease all;
-}
-
-.sign-in-input::placeholder {
-    color: transparent;
-}
-.sign-in-input:focus + .input-label,
-.sign-in-input:not(:placeholder-shown) + .input-label {
-    font-size: 0.65rem;
-    top: -15%;
 }
 
 .sign-in-btn {

@@ -26,6 +26,7 @@ class Enrollment extends React.Component {
                 //case 1
                 userRef.update({                    
                     userRole: 'student',
+                    credits: 10,
                     school: 'EMC',
                     class: {year: '2020', classCode: '901'}
                 })
@@ -36,6 +37,7 @@ class Enrollment extends React.Component {
                 //case 2
                 userRef.update({                    
                     userRole: 'student',
+                    credits: 10,
                     school: 'EMC',
                     class: {year: '2020', classCode: '902'}
                 })

@@ -62,7 +62,7 @@ class SignUp extends React.Component {
                             onChange={this.handleChange}
                             className="sign-in-input"
                             placeholder="bla"/>
-                            <label className="input-label" htmlFor="first-name">your user name</label>
+                            <label className="input-label" htmlFor="displayName">your user name</label>
                         </div>
                         <div className="input-container">                                
                             <input type="email" 

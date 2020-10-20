@@ -1,5 +1,6 @@
 import React from 'react';
-import VideoRank from '../../components/video-link/video-rank';
+import { Dashboard } from '../../components/dashboard/dashboard';
+/* import VideoRank from '../../components/video-link/video-rank'; */
 import './home.css';
 
 
@@ -15,7 +16,9 @@ class Home extends React.Component {
     render() {
         return(
             <div className="page-container">
-                <VideoRank currentUser={this.props.currentUser}/>
+                <Dashboard currentUser={this.props.currentUser}/>
+                {/* <VideoRank currentUser={this.props.currentUser}/> */}
+
             </div>
         )
     }

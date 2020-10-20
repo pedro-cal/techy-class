@@ -1,0 +1,69 @@
+.dashboard-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+}
+.dashboard-box a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-group {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.dash-btn-box {
+    margin: 20px;
+    padding: 5px ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 10px;        
+    height: 90px;
+    width: 90px;    
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dash-btn-box:hover{
+    background-color: white;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.dash-btn-box:active{
+    transform: scale(1);
+}
+
+.dash-btn-icon {
+    margin-bottom: -10px;
+    font-size: 2.4rem;
+    color: #353535;
+}
+
+.dash-btn-label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.date-sandbox {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    color: white;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}

@@ -54,7 +54,7 @@ class SignIn extends React.Component {
                         </div>
                         <button className="sign-in-btn">Sign In</button>
                         <img alt="Sign In Wigh Google" 
-                        src='./images/google-sign-in/btn_google_signin_dark_normal_web@2x.png' 
+                        src={process.env.PUBLIC_URL + '/images/google-sign-in/btn_google_signin_dark_normal_web2x.png'}
                         id="google-sign-in-btn"
                         onClick={signInWithGoogle}/>
                     </form>

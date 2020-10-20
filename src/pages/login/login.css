@@ -1,4 +1,6 @@
 .login-container {
+    width: 100%;
+    max-width: 1020px;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -7,6 +9,8 @@
 }
 
 .sign-in-up-container {
+    width: 100%;
+    max-width: 1020px;
     display: flex;
     align-content: center;
 }
@@ -17,7 +21,7 @@
     align-self: center;
 }
 
-.logo {
+.logo {    
     color: white;
     padding: 30px;
     margin: 10px 0;
@@ -27,6 +31,8 @@
 
 @media(max-width: 767px) {
     .logo {
+        position: fixed; 
+        top: 0;
         font-size: 1.8rem;        
         margin: 0;
         margin-bottom: 10px;
@@ -38,10 +44,10 @@
     .sign-in-up-container{
         display: flex;
         flex-direction: column;
+        margin-top: 17vh;
         padding-bottom: 20px;
     }
     .form-divider {
-        margin-bottom: 10px;
-        margin-top: 15px;
+        margin: 20px 0;        
     }    
 }
