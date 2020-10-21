@@ -53,17 +53,3 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
-
-
-.date-sandbox {
-    display: flex;
-    justify-content: center;
-    height: 500px;
-    color: white;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-}

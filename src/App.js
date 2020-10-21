@@ -7,34 +7,11 @@ import './App.css';
 import Home from './pages/home/home';
 import ClassList from './components/class-list/class-list';
 import {StudentsPage} from './pages/students/students-page';
-import Header from './components/header/header';
+import {Header} from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
-import LogIn from './pages/login/login';
+import {LogIn} from './pages/login/login';
 import Enrollment from './pages/enrollment/enrollment';
-
-/* //*IMPORTING JSON DATA 
-import emcData2 from './sample-data/emcData2';
-
-//*STORING STUDENTS DATA INTO AN ARRAY ADDING IDs 
-var key = 0;
-const studentsList = emcData2.map(student => {
-  student.id = key;
-  key++;
-  student.Labels = [];  
-  return student;
-}); */
-
-/* //*READING AND STORING THE AMOUNT OF CLASSES IN STUDENTS DATA INTO classes 
-var classes = [];
-function loadClasses(){
-    emcData2.map(student => {
-        if (!classes.includes(student.Class)) {
-            classes.push(student.Class);
-        }
-        return classes;
-    })
-}
-loadClasses(); */
+import { Dashboard } from './components/dashboard/dashboard';
 
 //* DEFINING APP CLASS 
 class App extends Component {
@@ -49,7 +26,6 @@ class App extends Component {
       showEnrollment: false    
     };    
   }
-
   toggleAuthMonitor = null;
 
   componentDidMount() {
@@ -79,7 +55,9 @@ class App extends Component {
               id: snapshot.id,
               ...snapshot.data()
             }
-          }, () => {this.setState({userRole: this.state.currentUser.userRole})})
+          }, () => {
+            this.setState({userRole: this.state.currentUser.userRole});            
+          })
         });
                 
       } else {
@@ -93,31 +71,30 @@ class App extends Component {
   } 
 
   render() {
-    var state = this.state;   
+    let {currentUser,userRole} = this.state;
+    let state = this.state;
     return (
       <div className="App">
-        {state.currentUser !== null ?        
-          <Header currentUser={state.currentUser}/> 
+        {currentUser !== null ?        
+          <Header currentUser={currentUser}/>
           : null
         }
-        {/* {state.currentUser === null ?
-          <Redirect to="/login" /> :
-          <Redirect to="/home" />
-        } */}          
+
         <div className = "main-container">          
-          { state.userRole === '' && state.userRole !== null ? 
-            <Enrollment currentUser={state.currentUser}/> : null
+          {userRole === '' && userRole !== null ? 
+            <Enrollment currentUser={currentUser}/> : null
           }
           
           <Switch>            
             <Route 
-              exact path="/login"
+              exact path="/login"              
               component={LogIn}
+              render={props => currentUser ? <Redirect to="/home"/> : null}
             />
             <Route 
               exact path="/home"
               render={(props) => (
-                <Home {...state}/>
+                <Dashboard {...state}/>
               )}
             />
             <Route 

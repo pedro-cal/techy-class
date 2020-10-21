@@ -1,17 +1,17 @@
-.header-box {
-    width: auto;
-    color: white;
-    padding: 0px;  
-    background-color: rgb(45, 45, 45);
-    position: relative;  
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    min-height: 5vh;
-    padding: 14px 0px;
-    border-radius: 0px;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 6px #000);   
+.header-box {  
+  width: auto;
+  color: white;
+  padding: 0px;  
+  background-color: rgb(45, 45, 45);
+  position: relative;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 5vh;
+  padding: 14px 0px;
+  border-radius: 0px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 6px #000);   
 }
 
 .header-logo {
