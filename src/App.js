@@ -11,7 +11,8 @@ import {Header} from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
 import {LogIn} from './pages/login/login';
 import Enrollment from './pages/enrollment/enrollment';
-import { Dashboard } from './components/dashboard/dashboard';
+import { VideoRankGame } from './pages/video-rank-game/video-rank-game';
+import VideoRank from './components/video-rank/video-rank';
 
 //* DEFINING APP CLASS 
 class App extends Component {
@@ -92,10 +93,12 @@ class App extends Component {
               render={props => currentUser ? <Redirect to="/home"/> : null}
             />
             <Route 
+              exact path={process.env.PUBLIC_URL}
+              render={props => currentUser ? <Home {...state}/> : <Redirect to="/login"/>}
+            />
+            <Route 
               exact path="/home"
-              render={(props) => (
-                <Dashboard {...state}/>
-              )}
+              render={props => currentUser ? <Home {...state}/> : <Redirect to="/login"/>}
             />
             <Route 
               exact path="/classes"
@@ -112,6 +115,11 @@ class App extends Component {
             <Route path="/projects" 
               render={(props) => (
                 <ProjectsList {...state}/>
+              )}
+            />
+            <Route path="/game-videorank" 
+              render={(props) => (
+                <VideoRank {...state}/>
               )}
             />                      
           </Switch>

@@ -6,17 +6,15 @@ import './home.css';
 
 class Home extends React.Component {
     constructor(props) {
-        super(props);
-
-        this.state = {
-            currentUser: this.props.currentUser
-        }
+        super(props);      
     }
 
     render() {
         return(
             <div className="page-container">
-                <Dashboard currentUser={this.props.currentUser}/>
+                <Dashboard 
+                    currentUser={this.props.currentUser}
+                    students={this.props.students}/>
                 {/* <VideoRank currentUser={this.props.currentUser}/> */}
 
             </div>

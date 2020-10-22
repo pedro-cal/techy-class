@@ -1,24 +1,24 @@
 .dashboard-box {
     width: 100%;
+    max-width: 920px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     height: 100%;
-}
-.dashboard-box a {
-    text-decoration: none;
-    color: black;
 }
 
 .btn-group {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    width: 50%;
+    max-width: 700px;
+    justify-content: space-around;
 }
 
-.dash-btn-box {
-    margin: 20px;
+.dash-btn-box, 
+.dash-info-box {    
+    margin-top: 20px;    
     padding: 5px ;
     display: flex;
     flex-direction: column;
@@ -26,15 +26,18 @@
     justify-content: center;
     align-items: center;
     background-color: lightgray;
-    border-radius: 10px;        
-    height: 90px;
-    width: 90px;    
+    border-radius: 10px;      
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dash-btn-box {
+    height: 90px;
+    width: 90px;  
 }
 
 .dash-btn-box:hover{
     background-color: white;
-    transform: scale(1.03);
+    /* transform: scale(1.03); */
     cursor: pointer;
 }
 
@@ -42,7 +45,12 @@
     transform: scale(1);
 }
 
-.dash-btn-icon {
+.toggle-clicked {
+    border: 10px solid goldenrod;
+    border-radius: 10px;
+}
+
+.dash-icon {
     margin-bottom: -10px;
     font-size: 2.4rem;
     color: #353535;
@@ -52,4 +60,70 @@
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.info-boxes-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dash-info-box {
+    padding: 10px;
+    width: 50%;
+    max-width: 700px;
+    display: grid;        
+    height: 90px;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dash-info-box:hover{
+    background-color: white;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.dash-info-box:active{
+    transform: scale(1);
+}
+
+.dash-big-number, .dash-info-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dash-big-number {
+    font-weight: bolder;
+    font-size: 2.2rem;    
+    height: 100%;
+    color: #173b6e;
+}
+
+.pending {
+    color: firebrick;
+}
+
+.dash-info-label {    
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;    
+}
+
+@media(max-width: 426px) {
+    .dash-btn-box {
+        margin: 0px;        
+    }
+    .btn-group {
+        width: 90%;
+        justify-content: space-between;
+    }
+    .dash-info-box {
+        margin: 0;
+        margin-top: 15px;
+        width: 90%;
+    }
 }

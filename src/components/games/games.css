@@ -1,0 +1,62 @@
+.games-box {
+    margin: 5px;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-info-box {    
+    margin-top: 15px;    
+    padding: 10px;    
+    width: 95%;
+    max-width: 700px;
+    display: grid;        
+    height: 90px;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 4fr;
+    background-color: lightgray;
+    border-radius: 10px;      
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.game-info-box:hover{
+    background-color: white;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.game-info-box:active{
+    transform: scale(1);
+}
+
+.game-title {
+    font-weight: bold;
+    color: rgb(151, 119, 30);
+}
+
+.game-description {
+    font-size: 0.8rem;
+}
+
+@media(max-width: 426px) {
+    .dash-btn-box {
+        margin: 0px;        
+    }
+    .btn-group {
+        width: 90%;
+        justify-content: space-between;
+    }
+    .games-box {
+        margin: 0;
+        margin-top: 10px;
+        width: 90%;
+    }
+    .game-description {
+        font-size: 0.75rem;
+    }
+}
