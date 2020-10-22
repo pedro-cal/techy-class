@@ -56,7 +56,7 @@ export const Header = (props) => {
                             </span>                      
                             :null} 
                         </span>
-                        <div className="sign-out-box" onClick={handleSignOut}>
+                        <div className="sign-out-box" onClick={() => handleSignOut()}>
                             <span id="sign-out-text">Sign Out</span>
                             <SignOutIcon/>
                         </div>
