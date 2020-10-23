@@ -92,14 +92,12 @@ constructor(props) {
   handleChange = (e) => {    
     this.setState({videoURL: e.target.value, videoIsDuplicate: false},
       () => {
-        const videoID = GetYoutubeId(this.state.videoURL);
-        console.log("videoID after input change: ", videoID);
+        const videoID = GetYoutubeId(this.state.videoURL);        
       
         //* Validating URL and Get Video Preview 
         if (videoID !== null) {      
           this.setState({videoURLInvalid: false, videoID: videoID},
-            async () => {
-              console.log('videoID in state after validation: ', this.state.videoID);
+            async () => {              
               //* Checking for duplicate videos 
               await firestore.collection('videos').where('videoID', '==', this.state.videoID)
                 .get()
@@ -147,8 +145,7 @@ constructor(props) {
     });
   }  
 
-  getUserByID = (userID) => {
-    console.log('getUserByID activated');
+  getUserByID = (userID) => {    
     var userData;    
     firestore.collection('users').doc(userID).get()
         .then(doc => {
@@ -160,7 +157,7 @@ constructor(props) {
           this.setState({videoPosters:[
             { userID: userID,
               userName: userData.displayName }
-          ]}, () => console.log(this.state.videoPosters))
+          ]})
         })
 }  
 

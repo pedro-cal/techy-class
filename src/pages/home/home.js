@@ -4,22 +4,14 @@ import { Dashboard } from '../../components/dashboard/dashboard';
 import './home.css';
 
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props);      
-    }
+export const Home = (props) => {   
+    return (
+        <div className="page-container">
+            <Dashboard 
+                currentUser={props.currentUser}
+                students={props.students}/>
+            {/* <VideoRank currentUser={this.props.currentUser}/> */}
 
-    render() {
-        return(
-            <div className="page-container">
-                <Dashboard 
-                    currentUser={this.props.currentUser}
-                    students={this.props.students}/>
-                {/* <VideoRank currentUser={this.props.currentUser}/> */}
-
-            </div>
-        )
-    }
+        </div>
+    ) 
 }
-
-export default Home;

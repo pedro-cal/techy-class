@@ -66,8 +66,7 @@ class VideoCard extends React.Component {
                 currentUserLike: currentUserLike[0]
             },
             () => {
-                this.paintLikeButtons();
-                console.log("State after getVideoLikes: ", this.state);
+                this.paintLikeButtons();                
             });
         }        
     }

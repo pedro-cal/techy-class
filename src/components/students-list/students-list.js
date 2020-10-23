@@ -17,37 +17,10 @@ class StudentsList extends Component {
   getUpdatedStudents = (updatedStudents) => {
     this.setState({students: updatedStudents});
   }
-
-  /* pushToDB = () => {
-    let stds = this.state.students;
-    
-    try {
-      stds.forEach(std => {
-        firestore.doc(`students/${std.id}`).set({
-          ...std
-        })
-      })      
-    } catch (error) {
-      console.error(error);
-    }
-  }  */
   
-  /* //* Temporary function that allows me to download changes to Students array as a JSON file 
-  handleDownload = () => {
-    const jsonData = this.state.students;
-    const fileData = JSON.stringify(jsonData, null, 3);
-    const blob = new Blob([fileData], {type: "text/plain"});
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.download = 'JSONDownloadTest.json';
-    link.href = url;
-    link.click();
-  } */
-  
-  render(){
+  render() {
     const students = this.props.students;
-    students.sort((a,b) => a.id - b.id);
-    console.log(students);
+    students.sort((a,b) => a.id - b.id);    
 
     let filteredStudents = [];
     if (this.props.chosenClass !== "") {
@@ -60,7 +33,7 @@ class StudentsList extends Component {
     
     return(
       <div className="students-list">
-        {/* INPUT BOX TO FILTER STUDENTS */}        
+        
         <div className="class-filter-box">
           <label htmlFor="class-filter" className="basic-label">
             Filtre os alunos pelo número da turma:
@@ -71,21 +44,11 @@ class StudentsList extends Component {
             placeholder="Digite o número da turma"
             onChange={e => {
               this.setState({searchField: e.currentTarget.value});
-            }}
-          />
+            }} />
         </div>
-
-       {/*  <div className="push-to-db" onClick={this.pushToDB}>
-            <button type='button'>Push Students to DB</button>
-          </div> */}
-      
-       {/*  <button type="button" 
-        id="download-json"
-        onClick={this.handleDownload}>Download JSON</button> */}
-
-        {/* LIST OF STUDENTS CARDS */}
-        <div className = "cards-list">          
-          {students.map(student => (                     
+        
+        <div className="cards-list">          
+          {filteredStudents.map(student => (                     
             <div key={student.id} className = "card-box">
               <div className="card-row-main">
                 <div className = "card-numbers">
@@ -110,6 +73,7 @@ class StudentsList extends Component {
             </div>        
           ))}
         </div>
+
       </div>
     )
   }

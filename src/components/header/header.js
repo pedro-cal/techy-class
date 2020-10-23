@@ -21,14 +21,13 @@ export const Header = (props) => {
 
     let userName;      
     if(currentUser !== null) {
-        userName = currentUser.displayName;
-        history.push("/home");
+        userName = currentUser.displayName;        
     }
     
     return(                            
         <div className="header-box">
             {currentUser === null ? 
-            <Redirect to="/login"/> : null}
+            <Redirect to="/login"/> : <Redirect to="/home"/>}
             <div className="header-logo">Techy Class</div>
             <div className="burger-menu">
                 <div className="one"></div>
@@ -67,74 +66,3 @@ export const Header = (props) => {
         </div>            
     )
 }
-
-
-
-/*
-class Header extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            currentUser: this.props.currentUser
-        }
-    }
-
-    handleSignOut = () => {
-        auth.signOut();
-        useHistory().push("/login");
-    }
-
-    render() {
-        var user = this.props.currentUser;        
-        var userName;      
-        if(user !== null) {
-            userName = user.displayName;             
-        }
-        
-        return(                            
-            <div className="header-box">
-
-                {this.state.currentUser === null ? 
-                <Redirect to="/login"/> : null}
-                <div className="header-logo">Techy Class</div>
-                <div className="burger-menu">
-                    <div className="one"></div>
-                    <div className="two"></div>
-                    <div className="three"></div>
-                </div>
-                <div className="nav-user-box">
-
-                    <nav className="nav-box">
-                        <Link className="menu-box" to="/home">
-                            <div className="icon-box"><HomeIcon /></div>
-                            <span className="menu-item">Home</span>
-                        </Link>                                            
-                    </nav>
-
-                    <div className="sign-in-menu">
-                    {this.props.currentUser ?                         
-                        <div className="user-menu-box">
-                            <span>
-                                {userName}
-                                {this.props.currentUser.userRole === 'student' ? 
-                                <span className="credits">
-                                    <DollarIcon/>                                    
-                                    <span>{this.props.currentUser.credits}</span>
-                                </span>                      
-                                :null} 
-                            </span>
-                            <div className="sign-out-box" onClick={this.handleSignOut}>
-                                <span id="sign-out-text">Sign Out</span>
-                                <SignOutIcon/>
-                            </div>
-                        </div> : null
-                    }                                                              
-                    </div>
-                </div>
-            </div>            
-        )
-    }
-}
-
-export default Header; */

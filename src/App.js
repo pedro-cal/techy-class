@@ -4,14 +4,14 @@ import {auth, firestore, getUserRefFromDB} from './firebase/firebase.utils';
 import './App.css';
 
 //*IMPORTING COMPONENTS 
-import Home from './pages/home/home';
+import {Home} from './pages/home/home';
 import ClassList from './components/class-list/class-list';
 import {StudentsPage} from './pages/students/students-page';
 import {Header} from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
 import {LogIn} from './pages/login/login';
 import Enrollment from './pages/enrollment/enrollment';
-import { VideoRankGame } from './pages/video-rank-game/video-rank-game';
+/* import { VideoRankGame } from './pages/video-rank-game/video-rank-game'; */
 import VideoRank from './components/video-rank/video-rank';
 
 //* DEFINING APP CLASS 
@@ -72,33 +72,32 @@ class App extends Component {
   } 
 
   render() {
-    let {currentUser,userRole} = this.state;
+    let {userRole} = this.state;
     let state = this.state;
     return (
       <div className="App">
-        {currentUser !== null ?        
-          <Header currentUser={currentUser}/>
+        {this.state.currentUser ?        
+          <Header currentUser={this.state.currentUser}/>
           : null
         }
 
         <div className = "main-container">          
           {userRole === '' && userRole !== null ? 
-            <Enrollment currentUser={currentUser}/> : null
+            <Enrollment currentUser={this.state.currentUser}/> : null
           }
           
           <Switch>            
             <Route 
               exact path="/login"              
-              component={LogIn}
-              render={props => currentUser ? <Redirect to="/home"/> : null}
+              render={props => this.state.currentUser ? <Redirect to="/home"/> : <LogIn />}
             />
             <Route 
               exact path={process.env.PUBLIC_URL}
-              render={props => currentUser ? <Home {...state}/> : <Redirect to="/login"/>}
+              render={props => this.state.currentUser ? <Home {...state}/> : <Redirect to="/login"/>}
             />
             <Route 
               exact path="/home"
-              render={props => currentUser ? <Home {...state}/> : <Redirect to="/login"/>}
+              render={props => this.state.currentUser ? <Home {...state}/> : <Redirect to="/login"/>}
             />
             <Route 
               exact path="/classes"
@@ -109,7 +108,7 @@ class App extends Component {
             <Route 
               exact path="/students" 
               render={(props) => (
-                <StudentsPage {...state} chosenClass={""}/>
+                <StudentsPage {...state} />
               )}
             />
             <Route path="/projects" 

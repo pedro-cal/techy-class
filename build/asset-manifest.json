@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/techy-class/static/css/main.8257c9c2.chunk.css",
-    "main.js": "/techy-class/static/js/main.61dc5ae8.chunk.js",
-    "main.js.map": "/techy-class/static/js/main.61dc5ae8.chunk.js.map",
+    "main.js": "/techy-class/static/js/main.70619fa8.chunk.js",
+    "main.js.map": "/techy-class/static/js/main.70619fa8.chunk.js.map",
     "runtime-main.js": "/techy-class/static/js/runtime-main.4081bf29.js",
     "runtime-main.js.map": "/techy-class/static/js/runtime-main.4081bf29.js.map",
     "static/js/2.94da2e20.chunk.js": "/techy-class/static/js/2.94da2e20.chunk.js",
     "static/js/2.94da2e20.chunk.js.map": "/techy-class/static/js/2.94da2e20.chunk.js.map",
     "index.html": "/techy-class/index.html",
-    "precache-manifest.39a1cabebbb472d6d8834e2f317ac8c2.js": "/techy-class/precache-manifest.39a1cabebbb472d6d8834e2f317ac8c2.js",
+    "precache-manifest.755bf842e5a357759772165cf8dfadd5.js": "/techy-class/precache-manifest.755bf842e5a357759772165cf8dfadd5.js",
     "service-worker.js": "/techy-class/service-worker.js",
     "static/css/main.8257c9c2.chunk.css.map": "/techy-class/static/css/main.8257c9c2.chunk.css.map",
     "static/js/2.94da2e20.chunk.js.LICENSE.txt": "/techy-class/static/js/2.94da2e20.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4081bf29.js",
     "static/js/2.94da2e20.chunk.js",
     "static/css/main.8257c9c2.chunk.css",
-    "static/js/main.61dc5ae8.chunk.js"
+    "static/js/main.70619fa8.chunk.js"
   ]
 }

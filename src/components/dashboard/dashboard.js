@@ -48,7 +48,7 @@ export const Dashboard = (props) => {
             
             {toggleGames ? <Games /> : null}
             
-            {toggleTeacherInfo ? 
+            {props.currentUser.userRole === 'teacher' && toggleTeacherInfo ? 
             <div className="info-boxes-container">
                 <div className="dash-info-box" onClick={() => history.push('/students')}>
                     <div className="dash-icon"><StudentsIcon/></div>
