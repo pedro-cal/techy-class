@@ -2,6 +2,7 @@ import React from 'react';
 import './dashboard.css';
 
 import {Games} from '../games/games';
+import {Timer} from '../class-tools/timer/timer';
 
 import {FaGamepad as GamesIcon} from 'react-icons/fa';
 import {FiRadio as LiveIcon} from 'react-icons/fi';
@@ -66,6 +67,8 @@ export const Dashboard = (props) => {
                     <div className="dash-info-label">Pending Tasks</div>                                
                 </div>
             </div> : null}
+
+            <Timer />
                     
         </div>
     )
