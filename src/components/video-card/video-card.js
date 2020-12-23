@@ -18,14 +18,28 @@ class VideoCard extends React.Component {
             videoLikes: [],
             totalLikes: 0,
             totalDislikes: 0,
-            currentUserLike: []
+            currentUserLike: [],
+            userCanDelete: false
         }        
     }
 
     toggleVideoLikesListener = null;
 
+    handleUserCanDelete = () => {
+        let video = this.props.video;
+        let currentUser = this.props.currentUser;
+        
+        if (currentUser !== null) { 
+            if (video.userID === currentUser.id ||
+                currentUser.userRole.includes('manager')) {
+            this.setState({userCanDelete: true});
+            }
+        } 
+    }
+
     componentDidMount() {
-        this.getVideoLikes();        
+        this.getVideoLikes(); 
+        this.handleUserCanDelete();       
 
         this.toggleVideoLikesListener = firestore.collection('videos').doc(this.props.video.videoID)
             .onSnapshot(() => {
@@ -79,7 +93,7 @@ class VideoCard extends React.Component {
         } else if (currentUserLike !== undefined && currentUserLike.opinion === 'dislike') {
             this.setState({likeToggle: false, dislikeToggle: true})
         }
-    }
+    }    
 
     handleClickDelete = (videoID) => {
         firestore.collection('videos').doc(videoID).delete()
@@ -105,7 +119,7 @@ class VideoCard extends React.Component {
         const video = this.props.video;
         const videoID = video.videoID;
         const currentUser = this.props.currentUser;
-        const {likeToggle,dislikeToggle,totalLikes,totalDislikes} = this.state;             
+        const {likeToggle,dislikeToggle,totalLikes,totalDislikes} = this.state;        
 
         return (
             <div className="video-card" key={videoID}>                
@@ -140,8 +154,8 @@ class VideoCard extends React.Component {
                         {video.postedBy}               
                     </span>
                     <span className="video-icon">
-                        {currentUser !== null && video.userID === currentUser.id ? 
-                        <TrashIcon onClick={() => this.handleClickDelete(videoID)}/> : null }
+                        {this.state.userCanDelete ?                         
+                        <TrashIcon onClick={() => this.handleClickDelete(videoID)}/> : null }                        
                     </span>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ export const Timer = () => {
   const [timerPaused, setTimerPaused] = useState(false);
   const [blockInputs, setBlockInputs] = useState(false);
 
-  let totalTime = (min*60) + sec;  
+  let totalTime = (parseInt(min,10)*60) + parseInt(sec,10);
 
   useEffect(() => {
     if(timerStarted) {

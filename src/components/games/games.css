@@ -1,12 +1,14 @@
 .games-box {
     margin: 5px;
-    border: 1px solid goldenrod;
+    border: 8px solid goldenrod;
     border-radius: 10px;
     padding-bottom: 15px;
     width: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: -12px;
 }
 
 .game-info-box {    

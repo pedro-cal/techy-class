@@ -1,0 +1,8 @@
+.video-rank-create {
+    width: 40%;
+    border: solid 1px gray;
+    border-radius: 10px;
+    color: white;
+    padding: 25px 10px;
+    box-shadow: 7px 7px 15px rgb(30,30,30);
+}

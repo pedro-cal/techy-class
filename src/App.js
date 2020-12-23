@@ -6,13 +6,13 @@ import './App.css';
 //*IMPORTING COMPONENTS 
 import {Home} from './pages/home/home';
 import ClassList from './components/class-list/class-list';
-import {StudentsPage} from './pages/students/students-page';
+import {StudentsPage} from './pages/students-page/students-page';
 import {Header} from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
 import {LogIn} from './pages/login/login';
 import Enrollment from './pages/enrollment/enrollment';
-/* import { VideoRankGame } from './pages/video-rank-game/video-rank-game'; */
-import VideoRank from './components/video-rank/video-rank';
+import { VideoRankGamePage } from './pages/video-rank-game-page/video-rank-game-page';
+/* import VideoRank from './components/video-rank/video-rank'; */
 
 //* DEFINING APP CLASS 
 class App extends Component {
@@ -118,7 +118,7 @@ class App extends Component {
             />
             <Route path="/game-videorank" 
               render={(props) => (
-                <VideoRank {...state}/>
+                <VideoRankGamePage {...state}/>
               )}
             />                      
           </Switch>

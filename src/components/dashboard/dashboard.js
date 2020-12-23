@@ -1,9 +1,11 @@
 import React from 'react';
 import './dashboard.css';
 
+//* Dashboard subcomponents 
 import {Games} from '../games/games';
 import {Timer} from '../class-tools/timer/timer';
 
+//* Importing Icons 
 import {FaGamepad as GamesIcon} from 'react-icons/fa';
 import {FiRadio as LiveIcon} from 'react-icons/fi';
 import {FaGraduationCap as ClassesIcon} from 'react-icons/fa';
@@ -26,6 +28,7 @@ export const Dashboard = (props) => {
     },[props.currentUser]);
 
     let history = useHistory();
+    
     return (
         <div className="dashboard-box">
             <div className="btn-group">
@@ -49,7 +52,7 @@ export const Dashboard = (props) => {
             
             {toggleGames ? <Games /> : null}
             
-            {props.currentUser.userRole === 'teacher' && toggleTeacherInfo ? 
+            {props.currentUser.userRole.includes('teacher') && toggleTeacherInfo ? 
             <div className="info-boxes-container">
                 <div className="dash-info-box" onClick={() => history.push('/students')}>
                     <div className="dash-icon"><StudentsIcon/></div>
