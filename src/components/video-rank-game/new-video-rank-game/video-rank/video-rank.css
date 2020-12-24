@@ -76,7 +76,7 @@ h1 {
     transform: scale(1);
 }
 
-.error-message {
+/* .error-message {
     color: red;
     font-size: 0.7rem;
     margin-bottom: 10px;
@@ -96,7 +96,7 @@ h1 {
     border-radius: 5px;
     width: fit-content;
     align-self: center;
-}
+} */
 
 .video-thumb {grid-area: video-thumb;}
 .preview-title {grid-area: preview-title;}

@@ -72,9 +72,10 @@ body{
 .game-container {  
   width: 100%;
   min-height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto 1fr;  
+  place-items: center;
 }
 
 /* Form Components */
@@ -152,4 +153,27 @@ body{
   width: fit-content;
   font-size: 0.85rem;
   color: gray;
+}
+
+/* UI Messages */
+.error-message {
+  color: red;
+  font-size: 0.7rem;
+  margin: 10px;
+  padding: 5px 10px;    
+  border: 1px solid red;
+  border-radius: 5px;
+  width: fit-content;
+  align-self: center;
+}
+
+.success-message {
+  color: green;
+  font-size: 0.7rem;
+  margin: 10px;
+  padding: 5px 10px;    
+  border: 1px solid green;
+  border-radius: 5px;
+  width: fit-content;
+  align-self: center;
 }

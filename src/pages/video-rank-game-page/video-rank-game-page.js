@@ -1,51 +1,30 @@
 import React from 'react';
 import './video-rank-game-page.css';
 
-import VideoRank from '../../components/video-rank/video-rank';
+import {FaPlay as PlayIcon} from 'react-icons/fa';
+import {FaPlusCircle as AddIcon} from 'react-icons/fa';
+
+/* import VideoRank from '../../components/video-rank-game/new-video-rank-game/video-rank/video-rank'; */
+import { NewVideoRankGame } from '../../components/video-rank-game/new-video-rank-game/new-video-rank-game';
+import { GameList } from '../../components/ui-components/game-list/game-list';
 
 export const VideoRankGamePage = (props) => {
   return (
     <div className="game-container">
-      {/* {props.userRole === 'student' ? 
-        <div>Hello Student</div>  : 
-        <div className="video-rank-create">
-          <div className="form-title">New Video Rank Game</div>
 
-          <div className="text-input-box">                                
-            <input 
-                type='text'
-                name='game-title'                
-                className="text-input"
-                placeholder="bla"
-            />
-            <label className="text-input-label" htmlFor="game-title">Game Title</label>
-          </div>
+      <div className="game-list-header">
+        <AddIcon />
+      </div>
 
-          <div className="text-input-box">                                
-            <input 
-                type="text"
-                name="game-goal"                
-                className="text-input"
-                placeholder="bla"
-            />
-            <label className="text-input-label" htmlFor="game-goal">Game Objective</label>
-          </div>
+      <div className="game-list-main">
+        <GameList gameType={'video-rank'} />  
+      </div>      
+      
+      {/* <NewVideoRankGame 
+        currentUser={props.currentUser}
+        userRole={props.userRole}/> */}
 
-          <div className="text-input-box">                                
-            <input 
-                type="text"
-                name="game-time"                
-                className="text-input"
-                placeholder="bla"
-            />
-            <label className="text-input-label" htmlFor="game-goal">{`Game Time (minutes)`}</label>
-          </div>
-          
-          <button className="form-btn">Create Game</button>
-
-        </div>        
-      } */}
-      <VideoRank currentUser={props.currentUser}/>
+      {/* <VideoRank currentUser={props.currentUser}/> */}
     </div>    
     );
 }

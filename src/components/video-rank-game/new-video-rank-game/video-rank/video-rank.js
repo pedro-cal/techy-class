@@ -1,10 +1,10 @@
 import React from 'react';
 import './video-rank.css';
-import VideoCard from '../video-card/video-card';
-import {firestore} from '../../firebase/firebase.utils';
-import {creditsOperation} from '../../firebase/databaseMethods';
+import VideoCard from '../../../video-card/video-card';
+import {firestore} from '../../../../firebase/firebase.utils';
+import {creditsOperation} from '../../../../firebase/databaseMethods';
 
-import {youtubeKey} from '../../config';
+import {youtubeKey} from '../../../../config';
 import GetYoutubeId from 'get-youtube-id';
 import {FaCheck as SaveIcon} from 'react-icons/fa';
 import {FaCoins as DollarIcon} from 'react-icons/fa';

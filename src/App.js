@@ -32,7 +32,7 @@ class App extends Component {
   componentDidMount() {
         
     //* GETTING STUDENTS COLLECTION FROM FIRESTORE 
-    firestore.collection('students')
+    /* firestore.collection('students')
       .get()
       .then(stdsSnapshot => {
         const dbStudents = [];
@@ -40,7 +40,7 @@ class App extends Component {
           dbStudents.push(doc.data());          
         })
         this.setState({students: dbStudents})
-      });
+      }); */
 
     //* listen to Auth changes 
     this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {      
