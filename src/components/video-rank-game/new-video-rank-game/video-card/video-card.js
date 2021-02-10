@@ -1,8 +1,8 @@
 import React from 'react';
 import './video-card.css';
 
-import {addVideoLike} from '../../firebase/databaseMethods';
-import {firestore} from '../../firebase/firebase.utils';
+import {addVideoLike} from '../../../../firebase/databaseMethods';
+import {firestore} from '../../../../firebase/firebase.utils';
 
 import {FaThumbsUp as LikeIcon} from 'react-icons/fa';
 import {FaThumbsDown as DislikeIcon} from 'react-icons/fa';

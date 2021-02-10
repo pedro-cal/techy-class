@@ -12,7 +12,6 @@ import ProjectsList from './components/projects-list/projects-list';
 import {LogIn} from './pages/login/login';
 import Enrollment from './pages/enrollment/enrollment';
 import { VideoRankGamePage } from './pages/video-rank-game-page/video-rank-game-page';
-/* import VideoRank from './components/video-rank/video-rank'; */
 
 //* DEFINING APP CLASS 
 class App extends Component {
@@ -32,7 +31,7 @@ class App extends Component {
   componentDidMount() {
         
     //* GETTING STUDENTS COLLECTION FROM FIRESTORE 
-    /* firestore.collection('students')
+    firestore.collection('students')
       .get()
       .then(stdsSnapshot => {
         const dbStudents = [];
@@ -40,7 +39,7 @@ class App extends Component {
           dbStudents.push(doc.data());          
         })
         this.setState({students: dbStudents})
-      }); */
+      });
 
     //* listen to Auth changes 
     this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {      

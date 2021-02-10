@@ -1,8 +1,8 @@
 import React from 'react';
 import './video-rank.css';
-import VideoCard from '../../../video-card/video-card';
+import VideoCard from '../video-card/video-card';
 import {firestore} from '../../../../firebase/firebase.utils';
-import {creditsOperation} from '../../../../firebase/databaseMethods';
+// import {creditsOperation} from '../../../../firebase/databaseMethods';
 
 import {youtubeKey} from '../../../../config';
 import GetYoutubeId from 'get-youtube-id';
@@ -134,7 +134,7 @@ constructor(props) {
     .then(() => {
       //* Take 1 credit off of the user 
       /* creditsOperation(this.props.currentUser.id, 'remove', 1); */
-      creditsOperation(this.props.currentUser.id,'remove',1);
+      // creditsOperation(this.props.currentUser.id,'remove',1);
 
       //* Inform success, then reset state 
       this.setState({videoSaved: true});
