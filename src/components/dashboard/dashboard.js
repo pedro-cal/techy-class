@@ -59,7 +59,7 @@ export const Dashboard = (props) => {
                     <div className="dash-big-number">{props.students.length}</div>
                     <div className="dash-info-label">Students</div>
                 </div>
-                <div className="dash-info-box">
+                <div className="dash-info-box" onClick={() => history.push('/classes')}>
                     <div className="dash-icon"><ClassesIcon/></div>
                     <div className="dash-big-number">{classes.length}</div>
                     <div className="dash-info-label">Classes</div>                                

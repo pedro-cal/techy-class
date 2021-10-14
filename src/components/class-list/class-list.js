@@ -18,17 +18,33 @@ class ClassList extends Component {
         }
     }
 
-  /*   storeFilteredStudents = () => {
+    defineClases = () => {
+        let classes = [];
+        const students = this.props.students;
+
+        students.forEach(std => 
+            !classes.includes(std.Class) ?
+                classes.push(std.Class) :
+                null
+        );
+
+        this.setState({classes: classes}, 
+            () => console.log(this.state.classes)); 
+    };
+
+    storeFilteredStudents = () => {
         var stdsInClickedClass = [];
+        
         this.state.students.map(student => {            
             if (student.Class === this.state.chosenClass) {
                 stdsInClickedClass.push(student);
             } return stdsInClickedClass;
         }); return stdsInClickedClass
-        this.setState({filteredStudents: stdsInClickedClass});
+        
+        // this.setState({filteredStudents: stdsInClickedClass});
 
                        
-    }; */
+    };
 
     handleClassClick = (e) => {
         this.setState({chosenClass: e.currentTarget.firstChild.innerHTML},
@@ -46,12 +62,14 @@ class ClassList extends Component {
     };
 
     render(){                
-        const classes = this.state.classes;
-        const students = this.state.students;
+        const classes = this.props.classes;
+        console.log(classes);
+        const students = this.props.students;
 
         return(
             <div className="container">
                 <div className="class-list">
+                    Teste
                 {classes.map((num,i) => {
                     let currentClass = num;
                     let totalStudents = 0;                    
