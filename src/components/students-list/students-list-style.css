@@ -1,81 +1,121 @@
 * {
-    margin: 0;
+   margin: 0;
 }
 
-.students-list{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
+.students-list {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
 
+.menu-row-box {
+   border: 1px solid yellow;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.filter-box {
+   width: max-content;
 }
 
 .basic-label {
-    color: gray;
-    font-size: 0.9rem;
+   color: gray;
+   font-size: 0.9rem;
 }
 
 .cards-list {
-    box-sizing: border-box;
-    margin: 10px 20px;
-    display: grid;    
-    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
+   box-sizing: border-box;
+   margin: 10px 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .class-filter-box {
-    width: fit-content;    
-    max-width: 95vw;
+   width: -moz-fit-content;
+   width: fit-content;
+   max-width: 95vw;
 }
 
 #class-filter {
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 1rem;
-    background-color: transparent;
-    color: white;
-    outline: none;
+   width: 100%;
+   margin-top: 5px;
+   margin-bottom: 0px;
+   border-radius: 10px;
+   padding: 10px;
+   font-size: 1rem;
+   background-color: transparent;
+   color: white;
+   outline: none;
+}
+
+.card-wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .card-box {
-    background-color: rgb(235, 235, 235);
-    display: grid;
-    grid-template-rows: auto;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    padding: 10px 5px;
-    margin: 8px 5px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+   background-color: rgb(235, 235, 235);
+   position: relative;
+   display: grid;
+   grid-template-rows: auto;
+   justify-content: center;
+   align-items: center;
+   border-radius: 8px;
+   padding: 10px 5px;
+   margin: 8px 5px 0px;
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-actions-box {
+   width: 90%;
+   border: 1px solid white;
+   border-radius: 0 0 8px 8px;
+   display: flex;
+   justify-content: center;
+}
+
+.card-actions-box span {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+}
+
+.card-button-box {
+   display: flex;
+   /* border-right: 1px solid white; */
+   padding-left: 8px;
 }
 
 .card-row-main {
-    display: grid;
-    grid-template-columns: 2fr 2fr 6fr;
-    justify-content: center;
-    align-items: center;
+   display: grid;
+   grid-template-columns: 2fr 2fr 6fr;
+   justify-content: center;
+   align-items: center;
 }
 
 .card-last-name {
-    font-size: 0.75rem;
-    padding: 0px 5px;
+   font-size: 0.75rem;
+   padding: 0px 5px;
 }
 
 .card-class {
-    font-weight: bold;
-    color: dimgray;
+   font-weight: bold;
+   color: dimgray;
 }
 
-.card-student-number{
-    font-size: small;
-    margin-top: 3px;
-    color: dimgray;
+.card-student-number {
+   font-size: small;
+   margin-top: 3px;
+   color: dimgray;
 }
 
 .card-images {
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid gray;
+   width: 100%;
+   border-radius: 5px;
+   border: 1px solid gray;
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import StudentsList from '../students-list/students-list';
+import StudentsList from '../../components/students-list/students-list';
 import './class-list-style.css';
 
 import {FaUserAlt as StudentIcon} from 'react-icons/fa';

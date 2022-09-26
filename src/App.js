@@ -5,7 +5,7 @@ import './App.css';
 
 //*IMPORTING COMPONENTS 
 import {Home} from './pages/home/home';
-import ClassList from './components/class-list/class-list';
+import ClassList from './pages/class-list/class-list';
 import {StudentsPage} from './pages/students-page/students-page';
 import {Header} from './components/header/header';
 import ProjectsList from './components/projects-list/projects-list';
@@ -29,17 +29,25 @@ class App extends Component {
   toggleAuthMonitor = null;
 
   componentDidMount() {
-        
-    //* GETTING STUDENTS COLLECTION FROM FIRESTORE 
-    firestore.collection('students')
+   const studentsUnparsed = localStorage.getItem('students');
+   const localStudents = JSON.parse(studentsUnparsed);
+
+   if (!localStudents) {
+      //* GETTING STUDENTS COLLECTION FROM FIRESTORE 
+      firestore.collection('students')
       .get()
       .then(stdsSnapshot => {
-        const dbStudents = [];
-        stdsSnapshot.forEach(doc => {
-          dbStudents.push(doc.data());          
-        })
-        this.setState({students: dbStudents})
+         const dbStudents = [];
+         stdsSnapshot.forEach(doc => {
+         dbStudents.push(doc.data());          
+         });
+         console.log('dbStudents:\n', dbStudents);
+         localStorage.setItem('students', JSON.stringify(dbStudents));
+         this.setState({students: dbStudents});
       });
+   } else {
+      this.setState({students: localStudents});
+   }
 
     //* listen to Auth changes 
     this.toggleAuthMonitor = auth.onAuthStateChanged(async signedUser => {      
