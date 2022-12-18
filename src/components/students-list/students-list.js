@@ -12,6 +12,7 @@ class StudentsList extends Component {
       this.state = {
          students: [...this.props.students],
          selectedCards: [],
+         isEditing: false,
          showSearchField: this.props.showSearchField,
          searchField: "",
          chosenClass: this.props.chosenClass
@@ -56,7 +57,7 @@ class StudentsList extends Component {
          <div className="students-list">
 
             <div className="menu-row-box">
-               <div className="filter-box">
+               {/* <div className="filter-box">
                   <label htmlFor="class-filter" className="basic-label">
                      Filtre os alunos pelo número da turma:
                   </label> <br />
@@ -68,6 +69,16 @@ class StudentsList extends Component {
                         this.setState({ searchField: e.currentTarget.value });
                      }}
                   />
+               </div> */}
+               <div className="menu-actions-box">
+                  <span className="card-button-box">
+                     <p>Select Multiple</p>
+                     <Checkbox
+                        size="small"
+                        onClick={(e) => this.setState({ isEditing: e.target.checked })}
+                        style={{ color: 'white' }}
+                     />
+                  </span>
                </div>
             </div>
 
@@ -99,7 +110,7 @@ class StudentsList extends Component {
                               updateStudents={this.getUpdatedStudents} />
                         </div>
                      </div>
-                     <div className="card-actions-box">
+                     {this.state.isEditing ? <div className="card-actions-box">
                         <span className="card-button-box">
                            <p>Select</p>
                            <Checkbox
@@ -107,7 +118,7 @@ class StudentsList extends Component {
                               onClick={(e) => this.handleSelectCard(e, student)}
                            />
                         </span>
-                     </div>
+                     </div> : null}
                   </ div>
                ))}
             </div>

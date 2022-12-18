@@ -10,10 +10,17 @@
 }
 
 .menu-row-box {
-   border: 1px solid yellow;
    width: 100%;
    display: flex;
-   justify-content: center;
+   justify-content: flex-end;
+}
+
+.menu-actions-box {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   color: white;
+   padding: 0 20px;
 }
 
 .filter-box {
@@ -86,9 +93,16 @@
 }
 
 .card-button-box {
+   color: white;
    display: flex;
-   /* border-right: 1px solid white; */
+   align-items: center;
    padding-left: 8px;
+}
+
+.card-button-box input {
+   color: white;
+   border: 1px solid white;
+
 }
 
 .card-row-main {
